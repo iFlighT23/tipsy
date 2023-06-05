@@ -36,6 +36,7 @@
             <main>
                 {{ $slot }}
             </main>
+            @yield('content')
         </div>
 
         @stack('modals')
