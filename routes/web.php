@@ -28,7 +28,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('recipe', RecipeController::class);
+    Route::resource('recipes', RecipeController::class);
 
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');

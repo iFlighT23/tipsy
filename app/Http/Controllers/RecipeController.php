@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
+use App\Models\Theme;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
@@ -13,7 +14,7 @@ class RecipeController extends Controller
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipe.index',compact('recipes'));
+        return view('recipe.index', compact('recipes'));
     }
 
     /**
@@ -21,7 +22,8 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        return view('recipe.create');
+        $themes = Theme::all();
+        return view('recipe.create', compact('themes'));
     }
 
     /**
@@ -34,7 +36,9 @@ class RecipeController extends Controller
             'description' => 'required',
         ]);
 
-        Recipe::create($validated);
+        $recipe = Recipe::create($validated);
+
+        $recipe->themes()->sync([1, 2, 3]);
 
         return redirect('recipe')->with('success', 'recette ajoutée avec succès');
     }

@@ -10,4 +10,9 @@ class Theme extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'status'];
+
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class);
+    }
 }

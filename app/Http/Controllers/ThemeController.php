@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Theme;
+use App\Models\recipe;
 
 class ThemeController extends Controller
 {
@@ -14,7 +15,7 @@ class ThemeController extends Controller
     {
         $themes = Theme::all();
 
-        return view('themes', compact('themes'));
+        return view('theme.themes', compact('themes'));
     }
 
     /**
@@ -22,7 +23,7 @@ class ThemeController extends Controller
      */
     public function create()// appel la vue
     {
-        return view('create');
+        return view('theme.create');
     }
 
     /**
@@ -55,7 +56,7 @@ class ThemeController extends Controller
     {
         // $theme = Theme::find($id); plus utile, on passe par l'objet directement, au lieu de l'id
         // dd($theme); on affiche notre objet brut
-        return view ('edit', compact('theme'));
+        return view ('theme.edit', compact('theme'));
     }
 
 
