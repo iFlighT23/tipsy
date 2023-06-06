@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Etape
         </h2>
-        <a href="{{ route('step.create') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Ajouter
+        <a href="{{ route('steps.create') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Ajouter
             un nouvelle étape</a>
     </x-slot>
 
@@ -37,13 +37,13 @@
                             @endif
                         </td>
                         <td class="px-6 py-4 flex items-center gap-2">
-                            <a href="{{ route('step.edit', $step) }}"
+                            <a href="{{ route('steps.edit', $step) }}"
                                 class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">edit</a>
-                            <form action="{{ route('step.destroy', $step) }}" method="post">
-                                @csrf
-                                <button type="submit"
-                                    class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">delete</button>
-                            </form>
+                                <form action="{{ route('steps.destroy', $step) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">delete</button>
+                                </form>
                         </td>
                     </tr>
                 @endforeach

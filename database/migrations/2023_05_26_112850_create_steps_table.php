@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
             $table->integer('step_number');
             $table->string('step_desc');
             $table->Integer('dose');
             $table->tinyInteger('status')->default(0);
-            $table->foreignId('id_ingredient');
-            $table->foreignId('id_recipe')->nullable();
+            $table->foreignId('ingredient_id');
+            $table->foreignId('recipe_id')->nullable();
             $table->timestamps();
         });
     }

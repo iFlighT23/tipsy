@@ -14,7 +14,7 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        $ingredients = Ingredient::all();
+        $ingredients = Ingredient::all()->sortBy('name');
         return view('ingredient.index', compact('ingredients'));
 
 
@@ -37,12 +37,16 @@ class IngredientController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'type' => 'required',
-            'status' => 'required'
+            'degree' => 'required'
         ]);
+
+        if ($request->status == 'on') {
+            $validated['status']= 1;
+        }
 
         Ingredient::create($validated);
 
-        return redirect('ingredient')->with('success', 'ingredient Ajouté avec succès');
+        return redirect('ingredients')->with('success', 'ingredient Ajouté avec succès');
     }
 
     /**
@@ -56,7 +60,7 @@ class IngredientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ingredient $ingredient)
+    public function edit(Ingredient $ingredient)
     {
         return view('ingredient.edit', compact('ingredient'));
     }
@@ -66,13 +70,18 @@ class IngredientController extends Controller
      */
     public function update(Request $request, Ingredient $ingredient)
     {
-        $ingredient->name = $request->get('name');
-        $ingredient->type = $request->get('type');
-        $ingredient->status = $request->get('status');
+        $ingredient->name = $request->name;
+        $ingredient->type = $request->type;
+        $ingredient->degree = $request->degree;
+        if ($request->status == 'on') {
+            $ingredient->status = 1;
+        }else {
+            $ingredient->status = 0;
+        }
 
         $ingredient->update();
 
-        return redirect()->route('index');
+        return redirect()->route('ingredients.index');
     }
 
     /**
@@ -82,6 +91,6 @@ class IngredientController extends Controller
     {
         $ingredient->delete();
 
-        return redirect()->route('ingredient');
+        return redirect()->route('ingredients.index');
     }
 }

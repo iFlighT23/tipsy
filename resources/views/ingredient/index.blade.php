@@ -3,7 +3,7 @@
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         Ingrédients
     </h2>
-    <a href="{{ route('ingredient.create') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Ajouter un nouvel ingrédient</a>
+    <a href="{{ route('ingredients.create') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Ajouter un nouvel ingrédient</a>
 </x-slot>
 
 <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8">
@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col" class="px-6 py-3">Nom</th>
                 <th scope="col" class="px-6 py-3">Type</th>
+                <th scope="col" class="px-6 py-3">Degré</th>
                 <th scope="col" class="px-6 py-3">status</th>
                 <th scope="col" class="px-6 py-3">actions</th>
             </tr>
@@ -23,6 +24,7 @@
                     {{ $ingredient->name }}
                 </th>
                 <td class="px-6 py-4">{{ $ingredient->type }}</td>
+                <td class="px-6 py-4">{{ $ingredient->degree }}</td>
                 <td class="px-6 py-4">
                     @if ($ingredient->status == 1)
                         <span class="text-xs rounded-full py-1 px-2 bg-green-600 text-green-200">actif</span>
@@ -31,9 +33,9 @@
                     @endif
                 </td>
                 <td class="px-6 py-4 flex items-center gap-2">
-                    <a href="{{ route('ingredient.edit', $ingredient) }}"
+                    <a href="{{ route('ingredients.edit', $ingredient) }}"
                     class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">edit</a>
-                    <form action="{{ route('ingredient.destroy', $ingredient) }}" method="post">
+                    <form action="{{ route('ingredients.destroy', $ingredient) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">delete</button>

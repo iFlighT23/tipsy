@@ -13,7 +13,7 @@ class StepController extends Controller
      */
     public function index()
     {
-        $steps = Ingredient::join('Steps', 'ingredients.id', '=', 'steps.id_ingredient')
+        $steps = Ingredient::join('Steps', 'ingredients.id', '=', 'steps.ingredient_id')
         ->get(['name','steps.*']);
         return view('step.index', compact('steps'));
     }
@@ -23,7 +23,7 @@ class StepController extends Controller
      */
     public function create()
     {
-        $ingredients = Ingredient::all();
+        $ingredients = Ingredient::all()->sortBy('name');
         return view('step.create', compact('ingredients'));
     }
 
@@ -33,16 +33,19 @@ class StepController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'id_ingredient' => 'required',
+            'ingredient_id' => 'required',
             'step_number' => 'required',
             'step_desc' => 'required',
-            'dose' => 'required',
-            'status' => 'required'
+            'dose' => 'required'
         ]);
+
+        if ($request->status == 'on') {
+            $validated['status']= 1;
+        }
 
         Step::create($validated);
 
-        return redirect('step')->with('success', 'ingredient Ajouté avec succès');
+        return redirect('steps')->with('success', 'ingredient Ajouté avec succès');
     }
 
     /**
@@ -56,24 +59,40 @@ class StepController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(step $step)
+    public function edit(Step $step)
     {
-        return view('step.edit', compact('step'));
+        $ingredients = Ingredient::all()->sortBy('name');
+        return view('step.edit', compact('step','ingredients'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Step $step)
     {
-        //
+
+        $step->step_number = $request->number;
+        $step->step_desc = $request->step_desc;
+        $step->dose = $request->dose;
+        $step->ingredient_id = $request->ingredient_id;
+        if ($request->status == 'on') {
+            $step->status = 1;
+        }else {
+            $step->status = 0;
+        }
+
+        $step->update();
+
+        return redirect()->route('steps.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Step $step)
     {
-        //
+        $step->delete();
+
+        return redirect()->route('steps.index');
     }
 }

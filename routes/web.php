@@ -26,8 +26,7 @@ Route::middleware([
         Route::get('/dashboard', function () {
             return view('dashboard');
         })->name('dashboard');
-        Route::resource('ingredient', IngredientController::class);
-        Route::resource('step', StepController::class);
-        // Route::get('/', [IngredientController::class, 'index'])->name('index');
+        Route::resource('ingredients', IngredientController::class);
+        Route::resource('steps', StepController::class);
     });
 

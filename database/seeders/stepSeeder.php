@@ -6,65 +6,74 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\step;
 
-class stepSeeder extends Seeder
+class StepSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        step::create ([
+        Step::create ([
             'step_number' =>'1',
             'step_desc'=>'verser',
-            'dose'=>'1',
-            'status'=>'1',
-            'id_ingredient'=>'1',
-            'id_recipe'=> "1"
+            'dose'=> 1,
+            'status'=> 1,
+            'ingredient_id'=> 1,
+            'recipe_id'=> null
         ]);
 
-        step::create ([
+        Step::create ([
             'step_number' =>'2',
             'step_desc'=>'verser',
             'dose'=>'1',
             'status'=>'1',
-            'id_ingredient'=>'2',
-            'id_recipe'=> "1"
+            'ingredient_id'=>'2',
+            'recipe_id'=> null
         ]);
 
-        step::create ([
+        Step::create ([
             'step_number' =>'3',
             'step_desc'=>'verser',
             'dose'=>'2',
             'status'=>'1',
-            'id_ingredient'=>'3',
-            'id_recipe'=> "1"
+            'ingredient_id'=>'3',
+            'recipe_id'=> null
         ]);
 
-        step::create ([
+        Step::create ([
             'step_number' =>'1',
             'step_desc'=>'verser',
             'dose'=>'2',
             'status'=>'1',
-            'id_ingredient'=>'4',
-            'id_recipe'=> ""
+            'ingredient_id'=>'4',
+            'recipe_id'=> null
         ]);
 
-        step::create ([
+        Step::create ([
             'step_number' =>'2',
             'step_desc'=>'verser',
             'dose'=>'3',
             'status'=>'1',
-            'id_ingredient'=>'5',
-            'id_recipe'=> ""
+            'ingredient_id'=>'5',
+            'recipe_id'=> null
         ]);
 
-        step::create ([
+        Step::create ([
             'step_number' =>'1',
             'step_desc'=>'verser',
             'dose'=>'1',
             'status'=>'1',
-            'id_ingredient'=>'6',
-            'id_recipe'=> ""
+            'ingredient_id'=>'6',
+            'recipe_id'=> null
+        ]);
+
+        Step::create ([
+            'step_number' =>'2',
+            'step_desc'=>'verser',
+            'dose'=>'2',
+            'status'=>'1',
+            'ingredient_id'=>'7',
+            'recipe_id'=> null
         ]);
     }
 }

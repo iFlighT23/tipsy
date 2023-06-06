@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class step extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_recipe', 'id_ingredient', 'step_number', 'step_desc', 'dose', 'status'];
+    protected $fillable = ['recipe_id', 'ingredient_id', 'step_number', 'step_desc', 'dose', 'status'];
 
-    public function ingredient()
+    public function ingredients()
     {
         return $this->hasMany(Ingredient::class);
     }

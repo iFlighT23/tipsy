@@ -15,10 +15,10 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('ingredient.index') }}" :active="request()->routeIs('index')">
+                    <x-nav-link href="{{ route('ingredients.index') }}" :active="request()->routeIs('index')">
                         Ingrédients
                     </x-nav-link>
-                    <x-nav-link href="{{ route('step.index') }}" :active="request()->routeIs('index')">
+                    <x-nav-link href="{{ route('steps.index') }}" :active="request()->routeIs('index')">
                         Etapes
                     </x-nav-link>
                 </div>
