@@ -22,6 +22,13 @@
             </div>
 
             <div class="">
+                <input type="checkbox" id="scales" name="scales" placeholder="Choisir le thème" checked class="border border-gray-600 @error('name') border-red-600 @enderror">
+                @error('name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="">
                 <textarea type="text" name="description" rows="10" cols="50" placeholder="Entrer votre recette"></textarea>
                 @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
