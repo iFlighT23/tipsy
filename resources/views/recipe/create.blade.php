@@ -11,7 +11,7 @@
     @endif --}}
 
     <div>
-        <form action="{{route('recipe.store')}}" method="Post">
+        <form action="{{ route('recipes.store') }}" method="Post">
             @csrf
 
             <div class="">

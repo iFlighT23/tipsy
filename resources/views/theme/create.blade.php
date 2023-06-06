@@ -16,3 +16,4 @@
         <button type="submit" class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">create</button>
     </form>
 </x-app-layout>
+

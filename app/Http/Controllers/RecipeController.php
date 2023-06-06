@@ -15,7 +15,7 @@ class RecipeController extends Controller
     public function index()
     {
         $recipes = Recipe::all();
-        return view('recipe.index',compact('recipes'));
+        return view('recipe.index', compact('recipes'));
     }
 
     /**
@@ -23,9 +23,8 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        $theme = Theme::all();
-        return view('recipe.create');
-
+        $themes = Theme::all();
+        return view('recipe.create', compact('themes'));
     }
 
     /**
@@ -38,7 +37,9 @@ class RecipeController extends Controller
             'description' => 'required',
         ]);
 
-        Recipe::create($validated);
+        $recipe = Recipe::create($validated);
+
+        $recipe->themes()->sync([1, 2, 3]);
 
         return redirect('recipe')->with('success', 'recette ajoutée avec succès');
     }
