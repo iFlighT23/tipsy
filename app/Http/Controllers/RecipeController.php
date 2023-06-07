@@ -36,6 +36,8 @@ class RecipeController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
         ]);
+  
+
 
         $recipe = Recipe::create($validated);
 
