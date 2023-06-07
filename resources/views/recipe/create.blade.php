@@ -22,10 +22,11 @@
 
             </div>
 
+
             <div class="">
                 <textarea type="text" name="description" rows="10" cols="50" placeholder="Entrer votre recette"></textarea>
                 @error('description')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 

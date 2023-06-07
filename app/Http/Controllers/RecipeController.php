@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipe;
-use App\Models\Theme;
+
 use Illuminate\Http\Request;
+use App\Models\Recipe;
+use App\Models\theme;
 
 class RecipeController extends Controller
 {
@@ -39,7 +40,9 @@ class RecipeController extends Controller
         $recipe = Recipe::create($validated);
 
         $recipe->themes()->sync($request->themes);
+        $recipe->themes()->sync($request->themes);
 
+        return redirect('recipes')->with('success', 'recette ajoutée avec succès');
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
     }
 
@@ -64,6 +67,7 @@ class RecipeController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -76,7 +80,7 @@ class RecipeController extends Controller
         $recipe->description = $request('description');
 
         $recipe->update($recipe->all);
-        return redirect('recipe')->with('success', 'recette modifiée avec succès');
+        return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 
     /**
@@ -87,4 +91,5 @@ class RecipeController extends Controller
         $recipe->delete();
         return redirect('recipes')->with('success', 'recette supprimée avec succès');
     }
+
 }
