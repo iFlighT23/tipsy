@@ -33,8 +33,17 @@
             <div class="">
                 <textarea type="text" name="description" rows="10" cols="50" placeholder="Entrer votre recette"></textarea>
                 @error('description')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+            </div>
+
+            <div class="">
+                @foreach ($themes as $theme)
+
+                <input type="checkbox" name="themes[]" value="{{$theme->id}}" class="border-gray-600">
+                <label>{{$theme->name}}</label>
+
+                @endforeach
             </div>
 
             <button type="submit" class="btn">Enregistrer</button>

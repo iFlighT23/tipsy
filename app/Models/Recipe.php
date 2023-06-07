@@ -14,7 +14,7 @@ class Recipe extends Model
 
     public function themes(): BelongsToMany
     {
- return $this->BelongsToMany(Theme::class);
+        return $this->belongsToMany(Theme::class);
     }
 }
 

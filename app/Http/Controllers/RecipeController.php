@@ -41,9 +41,9 @@ class RecipeController extends Controller
 
         $recipe = Recipe::create($validated);
 
-        $recipe->themes()->sync([1, 2, 3]);
+        $recipe->themes()->sync($request->themes);
 
-        return redirect('recipe')->with('success', 'recette ajoutée avec succès');
+        return redirect('recipes')->with('success', 'recette ajoutée avec succès');
     }
 
     /**
@@ -80,7 +80,7 @@ class RecipeController extends Controller
         $recipe->description = $request('description');
 
         $recipe->update($recipe->all);
-        return redirect('recipe')->with('success', 'recette modifiée avec succès');
+        return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 
     /**
@@ -89,7 +89,7 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         $recipe->delete();
-        return redirect('recipe')->with('success', 'recette  avec succès');
+        return redirect('recipes')->with('success', 'recette  avec succès');
     }
 
 }
