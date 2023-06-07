@@ -21,6 +21,14 @@
                     <x-nav-link href="{{ route('steps.index') }}" :active="request()->routeIs('index')">
                         Etapes
                     </x-nav-link>
+                    <x-nav-link href="{{ route('themes.index') }}" :active="request()->routeIs('themes.index')">
+                        Thèmes
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('themes.index')">
+                        recipe
+                    </x-nav-link>
+
                 </div>
             </div>
 
