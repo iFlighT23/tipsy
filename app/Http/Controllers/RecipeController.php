@@ -14,6 +14,8 @@ class RecipeController extends Controller
      */
     public function index()
     {
+
+
         $recipes = Recipe::all();
         return view('recipe.index', compact('recipes'));
     }
@@ -32,15 +34,16 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validate([// validated= variable request validé (on demande a valider le nom et la description)
             'name' => 'required|max:255',
             'description' => 'required',
         ]);
-  
+
 
 
         $recipe = Recipe::create($validated);
 
+        $recipe->themes()->sync($request->themes);
         $recipe->themes()->sync($request->themes);
 
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
@@ -51,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        
+
         return view('recipe.show', compact('recipe'));
     }
 
@@ -88,7 +91,7 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         $recipe->delete();
-        return redirect('recipes')->with('success', 'recette  avec succès');
+        return redirect('recipes')->with('success', 'recette  supprimée avec succès');
     }
 
 }

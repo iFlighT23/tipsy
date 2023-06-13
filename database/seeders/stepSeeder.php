@@ -68,9 +68,9 @@ class StepSeeder extends Seeder
         ]);
 
         Step::create ([
-            'step_number' =>'2',
-            'step_desc'=>'verser',
-            'dose'=>'2',
+            'step_number' =>'5',
+            'step_desc'=>'ajouter des feuilles',
+            'dose'=>'7',
             'status'=>'1',
             'ingredient_id'=>'7',
             'recipe_id'=> 2
