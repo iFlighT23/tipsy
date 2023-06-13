@@ -1,15 +1,15 @@
-<table>
+<x-app-layout>
+    {{$recipe->name}}<br>
+    {{$recipe->description}}<br>
 
-        <tr>
-            <th>Name</th>
-            <td>{{ $recipe->name }}</td>
-        </tr>
+    @foreach
+    ($recipe->steps->sortBy('step_number') as $step)
 
-        <tr>
-            <th>Description</th>
-            <td>{{ $recipe->description }}</td>
+    <div>
+        {{$step->step_number}}
+        {{$step->step_desc}}
+        {{$step->ingredient->name}}
+    </div>
 
-            <a href="{{ route('createrecipe') }}">Add</a>
-        </tr>
-
-</table>
+    @endforeach
+</x-app-layout>

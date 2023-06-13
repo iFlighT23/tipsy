@@ -14,8 +14,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
-        return view('recipe.index', compact('recipes'));
+       
+
+        // $recipes = Recipe::all();
+        // return view('recipe.index', compact('recipes'));
     }
 
     /**
@@ -36,7 +38,7 @@ class RecipeController extends Controller
             'name' => 'required|max:255',
             'description' => 'required',
         ]);
-  
+
 
 
         $recipe = Recipe::create($validated);
@@ -89,7 +91,7 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         $recipe->delete();
-        return redirect('recipes')->with('success', 'recette  avec succès');
+        return redirect('recipes')->with('success', 'recette  supprimée avec succès');
     }
 
 }
