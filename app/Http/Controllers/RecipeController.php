@@ -47,37 +47,36 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Recipe $recipe)
     {
-        $recipe = Recipe::findOrFail($id);
+        
         return view('recipe.show', compact('recipe'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Recipe $recipe)
     {
-        $recipe = Recipe::findOrFail($id);
-        return view('recipe.edit', compact('recipe'));
+        $themes = Theme::all();
+        return view('recipe.edit', compact('recipe', 'themes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Recipe $recipe)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name'=>'required',
             'description'=>'required'
         ]);
 
-        $recipe = Recipe::findOrFail($id);
-        $recipe->name = $request->get('name');
-        $recipe->description = $request('description');
+        $recipe->update($validated);
 
-        $recipe->update($recipe->all);
+        $recipe->themes()->sync($request->themes);
+
         return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 

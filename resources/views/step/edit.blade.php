@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Etapes
+            Editer une Etapes
         </h2>
         <a href="{{ route('steps.index') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Retour aux
             Etapes</a>
@@ -14,26 +14,35 @@
             @csrf
             @method('PATCH')
 
-            <label class="font-semibold text-gray-500" for="name">Numéro :</label>
-            <input class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
-                type="number" name="number" value="{{ $step->step_number }}">
+            <label class="font-semibold text-gray-500" for="name">Numéro d'étape :</label>
+            <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
+                type="text" name="number" value="{{ $step->step_number }}">
 
             <label class="font-semibold mt-3 text-gray-500" for="type">Description :</label>
-            <input class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+            <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
                 type="text" name="step_desc" value="{{ $step->step_desc }}">
 
-            <label class="font-semibold mt-3 text-gray-500" for="type">Dose :</label>
-            <input class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
-                type="number" name="dose" value="{{ $step->dose }}">
+            <label class="font-semibold mt-3 text-gray-500" for="type">Nombre de dose :</label>
+            <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
+                type="text" name="dose" value="{{ $step->dose }}">
 
-            <label class="font-semibold mt-3 text-gray-500 " for="type">Ingrédient :</label>
-            <select class="bg-gray-200 w-48" name="ingredient_id">
-                @foreach ($ingredients as $ingredient)
+                <label class="font-semibold mt-3 text-gray-500 " for="type">Ingrédient :</label>
+                <select class="bg-gray-50 w-48" name="ingredient_id">
+                    @foreach ($ingredients as $ingredient)
                     <option value="{{ $ingredient->id }}"
                         {{ $step->ingredient_id == $ingredient->id ? 'selected' : '' }}>{{ $ingredient->name }}
                     </option>
-                @endforeach
-            </select>
+                    @endforeach
+                </select>
+
+                <label class="font-semibold mt-3 text-gray-500 " for="type">Recette :</label>
+                <select class="bg-gray-50 w-full" name="recipe_id">
+                    @foreach ($recipes as $recipe)
+                    <option value="{{ $recipe->id }}"
+                        {{ $step->recipe_id == $recipe->id ? 'selected' : '' }}>{{ $recipe->name }}
+                    </option>
+                    @endforeach
+                </select>
 
             <div class="flex mt-5 gap-2 items-center">
                 <label for="status">Actif :</label>

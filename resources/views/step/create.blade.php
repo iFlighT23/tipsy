@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Etapes
+            Ajouter une Etape
         </h2>
         <a href="{{ route('steps.index') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Retour aux
             Etapes</a>
@@ -15,31 +15,38 @@
             @csrf
 
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="name">Numéro:</label>
+                <label class="font-semibold text-gray-500" for="name">Numéro étape:</label>
                 <input type="text"
-                    class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
-                    id="name" placeholder="Nom ingrédient" name="step_number">
+                    class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
+                    id="name" placeholder="Numéro étape" name="step_number">
             </div>
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="name">Description:</label>
                 <input type="text"
-                    class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+                    class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
                     id="type" placeholder="Type d'ingredient" name="step_desc">
             </div>
 
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="name">Dose:</label>
+                <label class="font-semibold text-gray-500" for="name">Nombre de dose:</label>
                 <input type="text"
-                    class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+                    class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
                     id="type" placeholder="Nombre de dose(s)" name="dose">
             </div>
 
 
             <label class="font-semibold text-gray-500 py-4" for="name">Ingrédient:</label>
-            <select class="bg-gray-200 w-48" name="ingredient_id">
+            <select class="bg-gray-50 w-48" name="ingredient_id">
                 @foreach ($ingredients as $ingredient)
                     <option value="{{ $ingredient->id }}">{{ $ingredient->name }}</option>
+                @endforeach
+            </select>
+
+            <label class="font-semibold text-gray-500 py-4" for="name">Recette:</label>
+            <select class="bg-gray-50 w-48" name="recipe_id">
+                @foreach ($recipes as $recipe)
+                    <option value="{{ $recipe->id }}">{{ $recipe->name }}</option>
                 @endforeach
             </select>
 

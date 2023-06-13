@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Step;
 use App\Models\Ingredient;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 
 class StepController extends Controller
@@ -13,8 +14,7 @@ class StepController extends Controller
      */
     public function index()
     {
-        $steps = Ingredient::join('Steps', 'ingredients.id', '=', 'steps.ingredient_id')
-        ->get(['name','steps.*']);
+        $steps = Step::all();
         return view('step.index', compact('steps'));
     }
 
@@ -23,8 +23,11 @@ class StepController extends Controller
      */
     public function create()
     {
+
         $ingredients = Ingredient::all()->sortBy('name');
-        return view('step.create', compact('ingredients'));
+        $recipes = Recipe::all()->sortBy('name');
+
+        return view('step.create', compact('ingredients', 'recipes'));
     }
 
     /**
@@ -34,6 +37,7 @@ class StepController extends Controller
     {
         $validated = $request->validate([
             'ingredient_id' => 'required',
+            'recipe_id' => 'required',
             'step_number' => 'required',
             'step_desc' => 'required',
             'dose' => 'required'
@@ -62,7 +66,8 @@ class StepController extends Controller
     public function edit(Step $step)
     {
         $ingredients = Ingredient::all()->sortBy('name');
-        return view('step.edit', compact('step','ingredients'));
+        $recipes = Recipe::all()->sortBy('name');
+        return view('step.edit', compact('step','ingredients', 'recipes'));
     }
 
     /**
@@ -72,6 +77,7 @@ class StepController extends Controller
     {
 
         $step->step_number = $request->number;
+        $step->recipe_id = $request->recipe_id;
         $step->step_desc = $request->step_desc;
         $step->dose = $request->dose;
         $step->ingredient_id = $request->ingredient_id;

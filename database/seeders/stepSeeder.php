@@ -15,47 +15,47 @@ class StepSeeder extends Seeder
     {
         Step::create ([
             'step_number' =>'1',
-            'step_desc'=>'verser',
+            'step_desc'=>'versez',
             'dose'=> 1,
             'status'=> 1,
             'ingredient_id'=> 1,
-            'recipe_id'=> null
+            'recipe_id'=> 1
         ]);
 
         Step::create ([
             'step_number' =>'2',
-            'step_desc'=>'verser',
+            'step_desc'=>'versez',
             'dose'=>'1',
             'status'=>'1',
             'ingredient_id'=>'2',
-            'recipe_id'=> null
+            'recipe_id'=> 1
         ]);
 
         Step::create ([
             'step_number' =>'3',
-            'step_desc'=>'verser',
+            'step_desc'=>'versez',
             'dose'=>'2',
             'status'=>'1',
             'ingredient_id'=>'3',
-            'recipe_id'=> null
+            'recipe_id'=> 1
         ]);
 
         Step::create ([
             'step_number' =>'1',
-            'step_desc'=>'verser',
+            'step_desc'=>'versez',
             'dose'=>'2',
             'status'=>'1',
             'ingredient_id'=>'4',
-            'recipe_id'=> null
+            'recipe_id'=> 1
         ]);
 
         Step::create ([
             'step_number' =>'2',
-            'step_desc'=>'verser',
+            'step_desc'=>'versez',
             'dose'=>'3',
             'status'=>'1',
             'ingredient_id'=>'5',
-            'recipe_id'=> null
+            'recipe_id'=> 2
         ]);
 
         Step::create ([
@@ -64,7 +64,7 @@ class StepSeeder extends Seeder
             'dose'=>'1',
             'status'=>'1',
             'ingredient_id'=>'6',
-            'recipe_id'=> null
+            'recipe_id'=> 2
         ]);
 
         Step::create ([
@@ -73,7 +73,7 @@ class StepSeeder extends Seeder
             'dose'=>'2',
             'status'=>'1',
             'ingredient_id'=>'7',
-            'recipe_id'=> null
+            'recipe_id'=> 2
         ]);
     }
 }
