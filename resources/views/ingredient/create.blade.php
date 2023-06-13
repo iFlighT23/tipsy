@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Ingrédients
+            Ajouter un ingrédient
         </h2>
         <a href="{{ route('ingredients.index') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-2">Retour aux
             ingrédients</a>
@@ -15,18 +15,18 @@
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="name">Nom:</label>
-                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-200 opacity-75mt-2 rounded focus:outline-none focus:ring-2" id="name" placeholder="Nom ingrédient" name="name">
+                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-50 opacity-75mt-2 rounded focus:outline-none focus:ring-2" id="name" placeholder="Nom ingrédient" name="name">
             </div>
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="name">Type:</label>
-                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" id="type" placeholder="type d'ingredient"
+                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" id="type" placeholder="type d'ingredient"
                     name="type">
             </div>
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="name">Degré:</label>
-                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" id="type" placeholder="degré d'alcool"
+                <input type="text" class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" id="type" placeholder="degré d'alcool"
                     name="degree">
             </div>
 

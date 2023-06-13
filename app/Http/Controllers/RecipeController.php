@@ -14,8 +14,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
-        return view('recipe.index', compact('recipes'));
+
+
+        // $recipes = Recipe::all();
+        // return view('recipe.index', compact('recipes'));
     }
 
     /**
@@ -37,6 +39,8 @@ class RecipeController extends Controller
             'description' => 'required',
         ]);
 
+
+
         $recipe = Recipe::create($validated);
 
         $recipe->themes()->sync($request->themes);
@@ -50,34 +54,34 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
+
         return view('recipe.show', compact('recipe'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Recipe $recipe)
     {
-        $recipe = Recipe::findOrFail($id);
-        return view('recipe.edit', compact('recipe'));
+        $themes = Theme::all();
+        return view('recipe.edit', compact('recipe', 'themes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Recipe $recipe)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required'
+        $validated = $request->validate([
+            'name'=>'required',
+            'description'=>'required'
         ]);
 
-        $recipe = Recipe::findOrFail($id);
-        $recipe->name = $request->get('name');
-        $recipe->description = $request('description');
+        $recipe->update($validated);
 
-        $recipe->update($recipe->all);
+        $recipe->themes()->sync($request->themes);
+
         return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 
@@ -87,7 +91,7 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         $recipe->delete();
-        return redirect('recipes')->with('success', 'recette supprimée avec succès');
+        return redirect('recipes')->with('success', 'recette  supprimée avec succès');
     }
 
 }
