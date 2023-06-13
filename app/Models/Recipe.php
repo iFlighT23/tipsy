@@ -16,6 +16,12 @@ class Recipe extends Model
     {
         return $this->belongsToMany(Theme::class);
     }
+    
+    public function steps(): HasMany
+    {
+        return $this->hasMany(Step::class);
+    }
+
 }
 
 

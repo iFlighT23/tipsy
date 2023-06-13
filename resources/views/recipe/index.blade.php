@@ -31,6 +31,7 @@
                     </td>
                     <td class="flex items-center gap-2 px-6 py-3">
                         <a class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200" href="{{ route('recipes.edit', $recipe) }}">Edit</a>
+                        <a class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200" href="{{ route('recipes.show', $recipe) }}">show</a>
                         <form action="{{ route('recipes.destroy', $recipe) }}" method="POST">
                             @csrf
                             @method('delete')
