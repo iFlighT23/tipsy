@@ -21,5 +21,4 @@ class Step extends Model
     {
         return $this->belongsTo(Recipe::class);
     }
-
 }

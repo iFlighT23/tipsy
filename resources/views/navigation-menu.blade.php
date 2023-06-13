@@ -25,7 +25,7 @@
                         Thèmes
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('themes.index')">
+                    <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('index')">
                         Recettes
                     </x-nav-link>
 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <!-- Teams Dropdown -->
+
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
