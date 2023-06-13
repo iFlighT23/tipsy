@@ -43,7 +43,6 @@ class RecipeController extends Controller
         $recipe->themes()->sync($request->themes);
 
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
-        return redirect('recipes')->with('success', 'recette ajoutée avec succès');
     }
 
     /**
