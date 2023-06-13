@@ -23,7 +23,31 @@
                 </div>
             </div>
 
-            <a href="{{ route('createrecipe') }}">Add</a>
-        </tr>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="name">Etapes :</label>
+                @foreach ($recipe->steps->sortBy('step_number') as $step)
+                    <div
+                        class="flex items-center h-8 px-4 w-full bg-gray-50 mt-2">
+                        <ul class=" marker:text-sky-400 list-disc">
+                            <li>Etape {{ $step->step_number }} -
+                                {{ $step->step_desc }}
+                                {{ $step->dose }} dose de
+                            {{ $step->ingredient->name }}</li>
+                        </ul>
+                    </div>
+                @endforeach
+            </div>
 
-</table>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="name">Thèmes :</label>
+                @foreach ($recipe->themes as $theme)
+                <div class="flex items-center text-xs h-8 px-4 w-48 bg-gray-50 mt-2 ">
+                    <ul class="marker:text-red-400 list-disc">
+                        <li>{{ $theme->name }}</li>
+                    </ul>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</x-app-layout>
