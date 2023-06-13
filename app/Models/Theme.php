@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Theme extends Model
@@ -12,8 +13,8 @@ class Theme extends Model
 
     protected $fillable = ['name', 'status', 'color'];
 
-    public function recipe(): HasMany
+    public function recipes(): BelongsToMany
     {
-        return $this->hasMany(Recipe::class);
+        return $this->BelongsToMany(Recipe::class);
     }
 }
