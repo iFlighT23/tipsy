@@ -11,7 +11,7 @@ class Theme extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'status'];
+    protected $fillable = ['name', 'status', 'color'];
 
     public function recipes(): BelongsToMany
     {

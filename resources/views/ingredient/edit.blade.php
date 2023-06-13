@@ -15,15 +15,15 @@
 
         <label class="font-semibold text-gray-500" for="name">Ingrédient :</label>
         <input
-            class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+            class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
             type="text" name="name" value="{{ $ingredient->name }}">
         <label class="font-semibold mt-3 text-gray-500" for="type">Type :</label>
         <input
-            class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+            class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
             type="text" name="type" value="{{ $ingredient->type }}">
         <label class="font-semibold mt-3 text-gray-500" for="type">Degré :</label>
         <input
-            class="flex items-center h-8 px-4 w-48 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2"
+            class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
             type="text" name="degree" value="{{ $ingredient->degree }}">
 
         <div class="flex mt-4 gap-2 items-center">
