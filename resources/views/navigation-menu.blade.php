@@ -26,7 +26,7 @@
                     </x-nav-link>
 
                     <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('themes.index')">
-                        Recettes
+                        Recette
                     </x-nav-link>
 
                 </div>
