@@ -44,3 +44,8 @@ Route::middleware([
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/all-themes', function (){
+    return view('tipsy.themes');
+});

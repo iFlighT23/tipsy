@@ -16,6 +16,13 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'old': '#FCF5E2',
+                'topaz': '#FECB75',
+                'sunset': '#FD5C5A',
+                'mblue': '#8BDADA',
+                'sea': '#4CC2C0'
+            },
         },
     },
 
