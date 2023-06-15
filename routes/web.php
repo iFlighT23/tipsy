@@ -35,6 +35,7 @@ Route::middleware([
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
 
+
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
     // Route::get('/themes/create', [ThemeController::class,'create'])->name('themes.create');
@@ -42,5 +43,5 @@ Route::middleware([
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tipsy.accueil');
 });

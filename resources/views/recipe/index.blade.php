@@ -21,6 +21,7 @@
             </thead>
             <tbody>
                 @foreach ($recipes as $recipe)
+           
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-500">
                     <td class="px-6 py-3">{{ $recipe->name }}</td>
                     <td class="px-6 py-3">{{ $recipe->description }}</td>
