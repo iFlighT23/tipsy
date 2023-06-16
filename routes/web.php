@@ -44,3 +44,7 @@ Route::middleware([
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cocktails', function () {
+    return view('tipsy.cocktails');
+});
