@@ -13,7 +13,7 @@ const modalbg = document.querySelector('#modal-bg');
 const modalSwitch = document.querySelector('#modal-switch');
 const modalSwitch2 = document.querySelector('#modal-switch2');
 const modalBox = document.querySelector('#modal-box');
-// const modalClose = document.getElementById('modal-close');
+
 
 modalbg.addEventListener("click", function(event) {
     const outsideclick = !modalBox.contains(event.target)
@@ -33,7 +33,3 @@ modalSwitch2.addEventListener("click", function() {
   modalbg.classList.remove('hidden')
 });
 
-// modalClose.addEventListener("click", function() {
-//   modalBox.classList.remove('hidden')
-//   modalbg.classList.remove('hidden')
-// });
