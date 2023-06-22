@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Livewire\Allrecipe;
+use App\Http\Livewire\AllIngredient;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StepController;
-use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +32,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('ingredients', IngredientController::class);
+    Route::get('ingredients', AllIngredient::class)->name('ingredients');
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
+    Route::get('/cocktails', Allrecipe::class)->name('cocktails');
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
@@ -45,6 +48,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cocktails', function () {
-    return view('tipsy.cocktails');
-});
+// Route::get('/cocktails', function () {
+//     return view('tipsy.cocktails');
+// });

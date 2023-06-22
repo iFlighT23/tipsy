@@ -1,13 +1,14 @@
 <div>
-        <input class="border border-green-600 text-green-600 rounded-md py-2 px-2" type="text" placeholder="recherche" wire:model="search">
+        <input class="border border-green-600 text-green-600 rounded-md py-2 px-2" type="text" placeholder="recherche"
+            wire:model.debounce.500ms="search">
 
         <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">Nom</th>
-                        <th scope="col" class="px-6 py-3">Type</th>
-                        <th scope="col" class="px-6 py-3">Degré</th>
+                        <x-table-header  :direction="$orderDirection" name="name" :currentName="$orderField" scope="col" class="px-6 py-3">Nom</x-table-header>
+                        <x-table-header  :direction="$orderDirection" name="type" :currentName="$orderField" scope="col" class="px-6 py-3">Type</x-table-header>
+                        <x-table-header  :direction="$orderDirection" name="degree" :currentName="$orderField" scope="col" class="px-6 py-3">Degrés</x-table-header>
                         <th scope="col" class="px-6 py-3">status</th>
                         <th scope="col" class="px-6 py-3">actions</th>
                     </tr>
@@ -29,8 +30,7 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 flex items-center gap-2">
-                                <a href="{{ route('ingredients.edit', $ingredient) }}"
-                                    class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">edit</a>
+                                <livewire:modal-component />
                                 <form action="{{ route('ingredients.destroy', $ingredient) }}" method="post">
                                     @csrf
                                     @method('delete')
@@ -42,5 +42,5 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $ingredients->links()}}
         </div>
-</div>
