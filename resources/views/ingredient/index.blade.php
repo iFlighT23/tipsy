@@ -38,7 +38,7 @@
                         </td>
                         <td class="px-6 py-4 flex items-center gap-2">
                             <button wire:click='update({{ $ingredient }})'
-                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">Edit</button>
+                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-blackcursor-pointer transition-all duration-200">Edit</button>
                             <button wire:click='deleteId({{ $ingredient->id }})'
                                 class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sunset hover:text-black cursor-pointer transition-all duration-200">delete</button>
                         </td>

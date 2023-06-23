@@ -2,15 +2,16 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
+use App\Models\Step;
 use App\Models\Recipe;
+use Livewire\Component;
 
 class Allrecipe extends Component
 {
 
     public $isOpen = false;
 
-    public $name,$rdescription,$step_number,$sdescription,$dose,$theme;
+    public $name,$description,$themes,$steps,$recipe_id;
 
     public function openModal()
     {
@@ -22,24 +23,25 @@ class Allrecipe extends Component
         $this->isOpen = false;
     }
 
+
+    public function show(Recipe $recipe)
+    {
+
+        $this->name = $recipe->name;
+        $this->description = $recipe->description;
+        $this->themes = $recipe->themes;
+        $this->steps = $recipe->steps;
+        $this->recipe_id = $recipe->id;
+
+        $this->openModal();
+
+    }
+
     public function render()
     {
         return view('tipsy.cocktails', [
             'recipes' => Recipe::all()
         ])->layout('layouts.app');
     }
-
-    public function update(Recipe $recipe)
-    {
-        $this->name = $recipe->name;
-        $this->rdescription = $recipe->description;
-        $this->step_number = $recipe->step->step_number;
-        $this->sdescription = $recipe->step->step_desc;
-        $this->dose = $recipe->step->dose;
-        $this->theme = $recipe->theme;
-
-        $this->openModal();
-
-
-    }
 }
+
