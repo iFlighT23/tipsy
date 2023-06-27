@@ -12,6 +12,7 @@ class RecipeSeeder extends Seeder
      */
     public function run(): void
     {
+        Recipe::factory()->count(100)->create();
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

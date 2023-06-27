@@ -5,13 +5,13 @@
                 <div class="flex max-full flex-wrap justify-center py-8">
                     @foreach ($recipes as $recipe)
                         <div class="mx-8 w-64 h-85 my-8 bg-topaz rounded-lg text-center flex-col drop-shadow-3xl">
-                            <div class="p-2 text-xl uppercase font-extrabold h-8 px-4 w-full mt-2">
+                            <div class=" text-lg uppercase font-extrabold h-8 px-4 w-full mt-2">
                                 {{ $recipe->name }}
                             </div>
 
                             <div class="py-4 h-64">
                                 <div class="overflow-hidden cursor-pointer">
-                                    <button wire:click='show({{ $recipe }})'><img
+                                    <button wire:click.prefetch ='show({{ $recipe }})'><img
                                             class="transition-all duration-500 ease-in-out hover:scale-110"
                                             src="{{ url('assets/cocktails.svg') }}" alt="cocktail"></button>
                                 </div>
@@ -25,6 +25,16 @@
                     @endforeach
                 </div>
             </div>
+            <div id="target" class="w-full my-8 flex justify-center">
+                @if ($perPage <= $totalRecords)
+                    <button wire:click='loadMore'
+                        class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-6 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200" >
+                        Load More</button>
+                @else
+                    <p>No more Recipe</p>
+                @endif
+            </div>
+
 
             @if ($isOpen)
                 <div class="fixed inset-0 flex items-center justify-center drop-shadow-3xl">
@@ -42,7 +52,9 @@
                         <div class="flex">
                             <div class="m-5 w-64 h-4/5 bg-topaz rounded-lg text-center flex-col drop-shadow-3xl">
                                 <div class="p-2 text-2xl font-bold h-8 px-4 w-full">
-                                    <input class="p-2 text-2xl bg-topaz capitalize text-center font-bold h-8 px-4 w-full" wire:model='name'>
+                                    <input
+                                        class="p-2 text-2xl bg-topaz capitalize text-center font-bold h-8 px-4 w-full"
+                                        wire:model='name'>
                                 </div>
 
                                 <div class="py-4 h-64">
@@ -62,9 +74,9 @@
                                     <h2 class="font-bold text-xl py-2">Ingrédients</h2>
                                     <div class="text-sm">
                                         <ul class="marker:text-sunset list-disc leading-6">
-                                            {{-- @foreach ( as  )
-                                            <li> </li>
-                                            @endforeach --}}
+                                            @foreach ($steps as $step)
+                                                <li>{{ $step->ingredient->name }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -72,7 +84,7 @@
                                     <h2 class="font-bold text-xl py-2">Etapes</h2>
                                     <div class="text-sm">
                                         <ul class="marker:text-sunset list-disc">
-                                            @foreach ($steps as $step )
+                                            @foreach ($steps as $step)
                                                 <li>Etape
                                                     {{ $step->step_number }} -
                                                     {{ $step->step_desc }}
@@ -84,68 +96,20 @@
                                     </div>
                                 </div>
                                 <div class="py-4">
-                                    <label class="font-semibold" for="name">Thèmes :
-                                    </label>
-                                        <div class="flex items-center text-xs px-4 w-48 mt-2 ">
-                                            <ul class="marker:text-red-400 list-disc">
-                                                @foreach ($themes as $theme)
-                                                    <li>{{$theme->name}}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
+                                    <div class="text-xs mt-2 ">
+                                        @foreach ($themes as $theme)
+                                            <span>{{ $theme->name }}</span>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <textarea class="bg-old" type="aera" rows="5" cols="100" wire:model='description'></textarea>
+                        <div class="py-4">
+                            {{ $descriptions }}
                         </div>
                     </div>
                 </div>
             @endif
         </div>
-
-            {{-- @if ($isOpen)
-                <div class="fixed inset-0 flex items-center justify-center drop-shadow-3xl">
-                    <div class="relative overflow-x-auto mt-12 max-w-2xl mx-auto px-8">
-                        <div
-                            class="flex flex-col text-sm  text-gray-500 uppercase bg-gray-50 rounded shadow-lg p-12 mt-12 dark:bg-gray-700 dark:text-gray-400">
-                            <div class="pb-8">
-                                <div class="flex justify-center text-xl font-bold h-8 px-4 w-full mt-2">
-                                    <input wire:model='name' >
-                                </div>
-                            </div>
-
-                            <div class="py-4">
-                                <label class="font-semibold text-gray-500" for="name">Decription :</label>
-                                <div class="flex items-center text-sm h-40 w-full bg-gray-50">
-                                  <textarea type="aera" rows="5" cols="30" wire:model='description'></textarea>
-                                </div>
-                            </div>
-                            <div class="py-4">
-                                <label class="font-semibold text-gray-500 py-4" for="name">Etapes :</label>
-                                <div class="flex items-center px-4 w-full bg-gray-50 mt-2">
-                                    <ul class="marker:text-sky-400 list-disc">
-                                        @foreach ($steps as $step )
-                                        <li>Etape {{ $step->step_number }} -
-                                            {{ $step->step_desc }}
-                                            {{ $step->dose }} dose de
-                                            {{ $step->ingredient->name }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                            </div>
-
-                            <div class="py-4">
-                                <label class="font-semibold text-gray-500" for="name">Thèmes :</label>
-                                    <div class="flex items-center text-xs px-4 w-48 bg-gray-50 mt-2 ">
-                                        <ul class="marker:text-red-400 list-disc">
-                                            @foreach ($themes as $theme)
-                                            <li>{{$theme->name}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-            @endif
-        </div> --}}
+    </div>
+</div>

@@ -5,13 +5,26 @@ namespace App\Http\Livewire;
 use App\Models\Step;
 use App\Models\Recipe;
 use Livewire\Component;
+use App\Models\Ingredient;
 
 class Allrecipe extends Component
 {
 
     public $isOpen = false;
+    public $totalRecords;
+    public $perPage = 12;
 
-    public $name,$description,$themes,$steps,$recipe_id;
+    public $name,$themes,$descriptions,$ingredients,$steps,$recipe_id;
+
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
+
+    public function mount()
+    {
+        $this->totalRecords = Recipe::count();
+    }
 
     public function openModal()
     {
@@ -23,13 +36,12 @@ class Allrecipe extends Component
         $this->isOpen = false;
     }
 
-
     public function show(Recipe $recipe)
     {
 
         $this->name = $recipe->name;
-        $this->description = $recipe->description;
         $this->themes = $recipe->themes;
+        $this->descriptions = $recipe->description;
         $this->steps = $recipe->steps;
         $this->recipe_id = $recipe->id;
 
@@ -37,11 +49,18 @@ class Allrecipe extends Component
 
     }
 
+    // public function render()
+    // {
+    //     return view('tipsy.cocktails', [
+    //         'recipes' => Recipe::all()
+    //     ])->layout('layouts.app');
+    // }
+
     public function render()
     {
-        return view('tipsy.cocktails', [
-            'recipes' => Recipe::all()
-        ])->layout('layouts.app');
+        return view('tipsy.cocktails')->with('recipes', Recipe::limit($this->perPage)->get()
+    );
     }
+
 }
 
