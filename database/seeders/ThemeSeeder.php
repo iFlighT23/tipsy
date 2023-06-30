@@ -15,7 +15,7 @@ class ThemeSeeder extends Seeder
     {
         Theme::create([
             'name'=> 'Nouvel An',
-            'status'=>'1'
+            'status'=> 1
         ]);
 
         Theme::create([

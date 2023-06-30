@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('themes', function (Blueprint $table) {
+        Schema::create('themes', function (Blueprint $table) {// l'objet blueprint défini la structure de la table et ses classes
+         //défini les colonnes.
             $table->id();
             $table->string ('name')->unique();
             $table->tinyInteger('status')->default(0);
-            $table->timestamps();
+            $table->string ('url')->nullable();
+            $table->string ('color')->nullable();
+            $table->timestamps();// ajout de 2 colonnes created et updated
         });
     }
 
