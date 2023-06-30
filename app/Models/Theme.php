@@ -11,10 +11,10 @@ class Theme extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'status', 'color'];
+    protected $fillable = ['name', 'status','url','color'];// fillable défini les attributs du model
 
-    public function recipes(): BelongsToMany
+    public function recipes(): BelongsToMany// relation n,n.
     {
-        return $this->BelongsToMany(Recipe::class);
+        return $this->belongsToMany(Recipe::class);
     }
 }

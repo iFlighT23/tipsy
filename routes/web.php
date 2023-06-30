@@ -5,6 +5,7 @@ use App\Http\Controllers\StepController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::resource('ingredients', IngredientController::class);
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
@@ -46,6 +48,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/all-themes', function (){
-    return view('tipsy.themes');
-});
+Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
+Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
+//model url de la route {theme est un paramètre}
+// transmet la valeur récupérée du {theme}paramètre à la theme methode dela FrontController classe.

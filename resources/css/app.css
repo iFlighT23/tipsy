@@ -5,3 +5,14 @@
 [x-cloak] {
     display: none;
 }
+
+@font-face {
+    font-family: pacifico-regular;
+    src: url('/public/fonts/Pacifico-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: poppins;
+    src: url('/public/fonts/Poppins-Regular.ttx') format('truetype');
+}
+
