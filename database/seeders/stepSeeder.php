@@ -13,6 +13,7 @@ class StepSeeder extends Seeder
      */
     public function run(): void
     {
+        Step::factory()->count(100)->create();
         Step::create ([
             'step_number' =>'1',
             'step_desc'=>'versez',

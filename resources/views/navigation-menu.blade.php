@@ -28,6 +28,9 @@
                     <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('index')">
                         Recettes
                     </x-nav-link>
+                    <x-nav-link href="{{ route('cocktails') }}" :active="request()->routeIs('index')">
+                        All Recettes
+                    </x-nav-link>
 
                 </div>
             </div>

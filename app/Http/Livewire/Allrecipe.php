@@ -12,13 +12,13 @@ class Allrecipe extends Component
 
     public $isOpen = false;
     public $totalRecords;
-    public $perPage = 12;
+    public $perPage = 10;
 
     public $name,$themes,$descriptions,$ingredients,$steps,$recipe_id;
 
     public function loadMore()
     {
-        $this->perPage += 12;
+        $this->perPage += 10;
     }
 
     public function mount()
