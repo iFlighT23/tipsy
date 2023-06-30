@@ -5,3 +5,16 @@
 [x-cloak] {
     display: none;
 }
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(/public/fonts/Pacifico.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(/public/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
+
+

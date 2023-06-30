@@ -14,7 +14,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'pacifico': ['Pacifico'],
+                'poppins': ['Poppins']
             },
             colors: {
                 'sable_clair': '#FCF5E2',
@@ -23,8 +24,16 @@ export default {
                 'bleu_clair': '#8BDADA',
                 'bleu_fonce': '#4CC2C0'
             },
+            filter: {
+                'goo': "url('#goo')",
+              },
         },
     },
 
     plugins: [forms, typography],
+
+    plugins: [
+      require('tailwindcss-animated')
+    ],
+  
 };

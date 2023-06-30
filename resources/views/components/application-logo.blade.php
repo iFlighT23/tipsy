@@ -1,2 +1,2 @@
 
-<img classe=""src="{{ url('img/logo.png')}}" alt="logo"/>
+<img src="{{ url('img/logo.png')}}" alt="logo" class="h-20"/>

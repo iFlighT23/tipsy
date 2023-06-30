@@ -41,7 +41,7 @@ class RecipeSeeder extends Seeder
         ]);
 
         Recipe::create([
-            'name' => 'Paradise',
+            'name' => 'Enfer',
             'description' => 'La plus célèbre recette cocktail à base d’abricot brandy, pour un apéritif fruité classique, née vraisemblablement dans les années 1920s à Londres.'
         ]);
 
