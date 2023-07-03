@@ -22,13 +22,6 @@ class AllIngredient extends Component
         'search' => ['except' =>'']
     ];
 
-    // use WithPagination;
-
-    // public function updatingSearch()
-    // {
-    //     $this->resetPage();
-    // }
-
     public function render()
     {
         return view('ingredient.index', [

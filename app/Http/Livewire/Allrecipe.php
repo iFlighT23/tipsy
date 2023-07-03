@@ -49,13 +49,6 @@ class Allrecipe extends Component
 
     }
 
-    // public function render()
-    // {
-    //     return view('tipsy.cocktails', [
-    //         'recipes' => Recipe::all()
-    //     ])->layout('layouts.app');
-    // }
-
     public function render()
     {
         return view('tipsy.cocktails')->with('recipes', Recipe::limit($this->perPage)->get()

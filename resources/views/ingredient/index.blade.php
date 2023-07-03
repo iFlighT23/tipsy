@@ -38,9 +38,9 @@
                         </td>
                         <td class="px-6 py-4 flex items-center gap-2">
                             <button wire:click='update({{ $ingredient }})'
-                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-blackcursor-pointer transition-all duration-200">Edit</button>
+                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-bleu_fonce hover:text-blackcursor-pointer transition-all duration-200">Edit</button>
                             <button wire:click='deleteId({{ $ingredient->id }})'
-                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sunset hover:text-black cursor-pointer transition-all duration-200">delete</button>
+                                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-rouge hover:text-black cursor-pointer transition-all duration-200">delete</button>
                         </td>
                     </tr>
                 @endforeach
@@ -79,15 +79,15 @@
 
                     <div class="flex mt-4 gap-2 items-center">
                         <label for="status">Actif :</label>
-                        <input wire:model='status' class="text-sunset outline-none" type="checkbox" name="status">
+                        <input wire:model='status' class="text-rouge outline-none" type="checkbox" name="status">
                     </div>
 
                     <div class="flex justify-between mt-8">
                         <button wire:click='store'
-                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200">Enregister
+                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-bleu_fonce hover:text-black cursor-pointer transition-all duration-200">Enregister
                         </button>
                         <button wire:click="closeModal"
-                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200">
+                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-bleu_fonce hover:text-black cursor-pointer transition-all duration-200">
                             Annuler
                         </button>
                     </div>
@@ -104,11 +104,11 @@
                     Confirm delete Ingredient
                  <div class="flex justify-between mt-8">
                         <button wire:click='delete'
-                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200">
+                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-bleu_fonce hover:text-black cursor-pointer transition-all duration-200">
                             Confirm
                         </button>
                         <button wire:click="closeModalDelete"
-                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200">
+                            class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-bleu_fonce hover:text-black cursor-pointer transition-all duration-200">
                             Annuler
                         </button>
                     </div>

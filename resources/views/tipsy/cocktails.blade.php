@@ -3,7 +3,7 @@
         <div class="flex flex-wrap justify-center py-8" style="background-image: url('assets/bgsable2.jpg')">
             @foreach ($recipes as $recipe)
                 <div @if ($loop->last) id="last_record" @endif
-                    class="mx-8 w-64 my-8 bg-topaz rounded-lg text-center flex-col drop-shadow-3xl">
+                    class="mx-8 w-64 my-8 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
                     <div class="flex-col w-64 rounded">
                         <div class="h-10">
                             <h3 class="text-center capitalize font-pacifico text-lg m-3">{{ $recipe->name }}</h3>
@@ -31,7 +31,7 @@
     <div class="w-full flex py-8 justify-center" style="background-image: url('assets/bgsable2.jpg')">
         @if ($perPage <= $totalRecords)
             <button wire:click='loadMore'
-                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-6 hover:bg-sea hover:text-black cursor-pointer transition-all duration-200">
+                class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-6 hover:bg-bleu_fonce hover:text-black cursor-pointer transition-all duration-200">
                 Load More
             </button>
         @else
@@ -61,7 +61,7 @@
     @if ($isOpen)
         <div
             class="fixed inset-0 flex items-center border backdrop-blur-sm justify-center drop-shadow-3xl ease-in duration-200 ">
-            <div class="relative overflow-x-auto mt-8 mx-auto w-2/5 h-3/5 px-8 bg-old drop-shadow-3xl rounded-lg">
+            <div class="relative overflow-x-auto mt-8 mx-auto w-2/5 h-3/5 px-8 bg-sable_clair drop-shadow-3xl rounded-lg">
                 <div class="flex justify-end mt-2">
                     <button wire:click='closeModal'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
@@ -72,9 +72,9 @@
                     </button>
                 </div>
                 <div class="flex">
-                    <div class="m-5 w-64 bg-topaz rounded-lg text-center flex-col drop-shadow-3xl">
+                    <div class="m-5 w-64 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
                         <div class="h-10">
-                            <input class="text-center bg-topaz font-pacifico text-lg my-3" wire:model='name'>
+                            <input class="text-center bg-sable_fonce font-pacifico text-lg my-3" wire:model='name'>
                         </div>
                         <div class="py-4 overflow-hidden">
                             <img class="object-cover h-72 w-64" src="{{ url('assets/cocktail2.jpg') }}" alt="cocktail">
@@ -94,7 +94,7 @@
                         <div class="my-8">
                             <h2 class="font-bold text-xl py-2">Ingrédients</h2>
                             <div class="text-sm">
-                                <ul class="marker:text-sunset list-disc leading-6">
+                                <ul class="marker:text-rouge list-disc leading-6">
                                     @foreach ($steps as $step)
                                         <li>{{ $step->ingredient->name }}</li>
                                     @endforeach
@@ -104,7 +104,7 @@
                         <div>
                             <h2 class="font-bold text-xl py-2">Etapes</h2>
                             <div class="text-sm">
-                                <ul class="marker:text-sunset list-disc">
+                                <ul class="marker:text-rouge list-disc">
                                     @foreach ($steps as $step)
                                         <li>Etape
                                             {{ $step->step_number }} -

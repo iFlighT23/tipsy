@@ -19,11 +19,11 @@ export default {
                 poppins: ['poppins']
             },
             colors: {
-                'old': '#FCF5E2',
-                'topaz': '#FECB75',
-                'sunset': '#FD5C5A',
-                'mblue': '#8BDADA',
-                'sea': '#4CC2C0'
+                'sable_clair': '#FCF5E2',
+                'sable_fonce': '#FECB75',
+                'rouge': '#FD5C5A',
+                'bleu_clair': '#8BDADA',
+                'bleu_fonce': '#4CC2C0'
             },
             dropShadow: {
                 '3xl': '8px 8px 4px rgba(0,0,0,0.25)',
