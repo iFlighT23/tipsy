@@ -16,6 +16,12 @@
             @csrf
             <input class="my-4 rounded" type='text' name='name' value="{{ $recipe->name }}">
             <textarea class="rounded" type="text" name="description" rows="10" cols="50">{{ $recipe->description }}</textarea>
+
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="url">url</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="url" value="{{ $recipe->url }}">
+
+            </div>
             @foreach ( $themes as $theme )
 
             <div class="">
