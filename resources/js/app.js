@@ -2,6 +2,7 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
+
 window.Alpine = Alpine;
 
 Alpine.plugin(focus);
@@ -12,3 +13,5 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 AOS.init();
+
+

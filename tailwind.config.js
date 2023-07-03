@@ -28,6 +28,14 @@ export default {
             },
             filter: {
                 'goo': "url('#goo')",
+                pacifico: ['pacifico'],
+                poppins: ['poppins']
+            },
+            dropShadow: {
+                '3xl': '8px 8px 4px rgba(0,0,0,0.25)',
+            },
+            height: {
+                '85': '22rem',
               },
         },
     },

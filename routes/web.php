@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Livewire\Allrecipe;
+use App\Http\Livewire\AllIngredient;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StepController;
-use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\FrontController;
@@ -32,10 +33,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('ingredients', IngredientController::class);
+    Route::get('ingredients', AllIngredient::class)->name('ingredients');
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
+    Route::get('/cocktails', Allrecipe::class)->name('cocktails');
 
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
@@ -48,9 +50,5 @@ Route::get('/', function () {
     return view('tipsy.accueil');
 });
 
-
 Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
 Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
-//model url de la route {theme est un paramètre}
-// transmet la valeur récupérée du {theme}paramètre à la theme methode dela FrontController classe.
-

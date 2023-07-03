@@ -35,7 +35,7 @@
                             <a href="{{ route('recipes.show', $recipe) }}"
                                 class="rounded-md border border-gray-800 text-sm text-gray-800 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">Voir</a>
                             <a href="{{ route('recipes.edit', $recipe) }}"
-                                class="rounded-md border border-gray-200 text-sm text-gray-800 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">Edit</a>
+                                class="rounded-md border border-gray-800 text-sm text-gray-800 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">Edit</a>
                             <form action="{{ route('recipes.destroy', $recipe) }}" method="POST">
                                 @csrf
                                 @method('delete')
