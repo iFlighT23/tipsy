@@ -15,14 +15,14 @@
             @method('put')
             @csrf
             <input class="my-4 rounded" type='text' name='name' value="{{ $recipe->name }}">
-            <textarea class="rounded" type="text" name="description" rows="10" cols="50">{{ $recipe->description }}"</textarea>
+            <textarea class="rounded" type="text" name="description" rows="10" cols="50">{{ $recipe->description }}</textarea>
             @foreach ( $themes as $theme )
 
             <div class="">
                 <input type="checkbox" name="themes[]" value="{{ $theme->id }}" @if ($recipe->themes->contains($theme->id))
                 checked
                 @endif
-                class="border-gray-600">
+                class="border-gray-800">
                 <label>{{ $theme->name }}</label>
 
                 @endforeach

@@ -9,4 +9,9 @@ Alpine.plugin(focus);
 
 Alpine.start();
 
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+AOS.init();
+
 

@@ -17,6 +17,11 @@
                 <label class="font-semibold text-gray-500" for="name">Name</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="name" name="name" value="{{ $theme->name }}">
             </div>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="url">url</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="url" name="url" value="{{ $theme->url }}">
+            </div>
+            <img src="{{ $theme->url }}"/>
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="status">actif</label>
