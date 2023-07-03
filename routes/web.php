@@ -37,6 +37,7 @@ Route::middleware([
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
+    // Route::get('cocktails', [Allrecipe::class,'recipes'])->name('cocktails');
 
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
