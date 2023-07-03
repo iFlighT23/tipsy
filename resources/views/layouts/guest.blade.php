@@ -48,15 +48,15 @@
                 <div class="flex items-center gap-8">
                     <div class="group">
                         <a href="" class="text-sm">Cocktail</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
                     </div>
                     <div class="group">
                         <a href="" class="text-sm">Cocktail sans alcool</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
                     </div>
                     <div class="group">
                         <a href="" class="text-sm">Thème</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
                     </div>
                 </div>
 

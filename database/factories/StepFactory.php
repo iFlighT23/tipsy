@@ -21,7 +21,7 @@ class StepFactory extends Factory
             'step_desc' => $this->faker->word,
             'dose' => $this->faker->numberBetween(1,4),
             'ingredient_id' => $this->faker->numberBetween(1,28),
-            'recipe_id' => $this->faker->numberBetween(1,100)
+            'recipe_id' => $this->faker->numberBetween(1,28)
         ];
     }
 }
