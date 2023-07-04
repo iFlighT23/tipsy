@@ -36,12 +36,14 @@ class RecipeController extends Controller
         $validated = $request->validate([// validated= variable request validé (on demande a valider le nom et la description)
             'name' => 'required|max:255',
             'description' => 'required',
+            'url' => 'required'
         ]);
 
 
 
         $recipe = Recipe::create($validated);
 
+        $recipe->themes()->sync($request->themes);
         $recipe->themes()->sync($request->themes);
 
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
@@ -73,12 +75,14 @@ class RecipeController extends Controller
     {
         $validated = $request->validate([
             'name'=>'required',
-            'description'=>'required'
+            'description'=>'required',
+            'url' => 'required'
         ]);
 
         $recipe->update($validated);
 
         $recipe->themes()->sync($request->themes);
+
 
         return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }

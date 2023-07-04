@@ -22,7 +22,7 @@
                 ou simplement basiques ? Vous
                 êtes au bon endroit pour vivre une expérience des plus plaisantes. Nous avons recensé rien que pour
                 vous
-                plus d'une centaine de cocktails. Nuls doute que vous trouverez votre bonheur. Nous vous souhaitons
+                plus d'une centaine de cocktails. Nul doute que vous trouverez votre bonheur. Nous vous souhaitons
                 par
                 avance une bonne dégustation.</p>
         </div>

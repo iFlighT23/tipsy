@@ -14,11 +14,8 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        $ingredients = Ingredient::all()->sortBy('name');
-        return view('ingredient.index', compact('ingredients'));
-
-
-
+        // $ingredients = Ingredient::all()->sortBy('name');
+        return view('ingredient.index');
     }
 
     /**

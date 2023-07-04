@@ -15,7 +15,7 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('ingredients.index') }}" :active="request()->routeIs('index')">
+                    <x-nav-link href="{{ route('ingredients') }}" :active="request()->routeIs('ingredients')">
                         Ingrédients
                     </x-nav-link>
                     <x-nav-link href="{{ route('steps.index') }}" :active="request()->routeIs('index')">
@@ -27,6 +27,9 @@
 
                     <x-nav-link href="{{ route('recipes.index') }}" :active="request()->routeIs('index')">
                         Recettes
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('cocktails') }}" :active="request()->routeIs('index')">
+                        All Recettes
                     </x-nav-link>
 
                 </div>

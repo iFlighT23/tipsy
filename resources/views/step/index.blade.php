@@ -30,7 +30,7 @@
                         <td class="px-6 py-4">{{ $step->step_desc }}</td>
                         <td class="px-6 py-4">{{ $step->dose }}</td>
                         <td class="px-6 py-4">{{ $step->ingredient->name }}</td>
-                        <td class="px-6 py-4">{{ $step->recipe->name }}</td>
+                        <td class="px-6 py-4">{{ $step->recipe != null ? $step->recipe->name : 'rien' }}</td>
                         <td class="px-6 py-4">
                             @if ($step->status == 1)
                                 <span class="text-xs rounded-full py-1 px-2 bg-green-600 text-green-200">actif</span>

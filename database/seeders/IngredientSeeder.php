@@ -16,7 +16,14 @@ class IngredientSeeder extends Seeder
         Ingredient::create ([
             'name' =>'Rhum blanc',
             'type' =>'Alcool fort',
-            'degree' => '55',
+            'degree' => '50',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Rhum Ambré',
+            'type' =>'Alcool fort',
+            'degree' => '45',
             'status'=>'1'
         ]);
 
@@ -134,6 +141,55 @@ class IngredientSeeder extends Seeder
         Ingredient::create ([
             'name' =>'Glaçon',
             'type' =>'Garniture',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Get 27',
+            'type' =>'Alcool fort',
+            'degree' =>'21',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Get 31',
+            'type' =>'Alcool fort',
+            'degree' =>'24',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Absinthe',
+            'type' =>'Alcool fort',
+            'degree' =>'68',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Cognac',
+            'type' =>'Alcool fort',
+            'degree' =>'40',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Crème d\'Abricot',
+            'type' =>'liqueur',
+            'degree' =>'16',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Crème cassis',
+            'type' =>'liqueur',
+            'degree' =>'15',
+            'status'=>'1'
+        ]);
+
+        Ingredient::create ([
+            'name' =>'Fleur de Sureau',
+            'type' =>'liqueur',
+            'degree' =>'20',
             'status'=>'1'
         ]);
     }

@@ -3,7 +3,7 @@
         <div>
             <h3 class="text-center font-pacifico m-3">{{ $recipe->name }}</h3>
         </div>
-        <div class="h-56 bg-cover bg-no-repeat hover:bg-center hover:scale-110 overflow-hidden max-w-xs transition duration-300 ease-in-out" style="background-image: url('{{ 'img/Fanpop.jpg' }}')">
+        <div class="h-56 bg-cover bg-no-repeat hover:bg-center hover:scale-110 overflow-hidden max-w-xs transition duration-300 ease-in-out" style="background-image: url('{{ $recipe->url }}')">
         </div>
 
         <div class="flex m-3 justify-center">

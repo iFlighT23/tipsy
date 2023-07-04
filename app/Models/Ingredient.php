@@ -10,7 +10,7 @@ class Ingredient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'type', 'status'];
+    protected $fillable = ['name', 'type', 'degree', 'status'];
 
     public function step(): BelongsTo
     {

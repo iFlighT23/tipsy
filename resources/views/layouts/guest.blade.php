@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 
 
 
@@ -50,22 +50,18 @@
                     </div>
 
 
-                    <div class="flex items-center gap-8">
-                        <div class="group">
-                            <a href="" class="text-sm">Cocktails</a>
-                            <img src="img/planche.svg" alt="planche"
-                                class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
-                        </div>
-                        <div class="group">
-                            <a href="" class="text-sm">Cocktails sans alcool</a>
-                            <img src="img/planche.svg" alt="planche"
-                                class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
-                        </div>
-                        <div class="group">
-                            <a href="{{ route('front.themes') }}" class="text-sm">Thèmes</a>
-                            <img src="img/planche.svg" alt="planche"
-                                class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
-                        </div>
+                <div class="flex items-center gap-8">
+                    <div class="group">
+                        <a href="" class="text-sm">Cocktail</a>
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
+                    </div>
+                    <div class="group">
+                        <a href="{{ route('sansalcool') }}" class="text-sm">Cocktail sans alcool</a>
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
+                    </div>
+                    <div class="group">
+                        <a href="{{route('front.themes')}}" class="text-sm">Thèmes</a>
+                        <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
                     </div>
 
                 </div>
@@ -111,7 +107,8 @@
     <div class="font-sans text-gray-800 antialiased ">
         {{ $slot }}
     </div>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
+        <script src="bower_components/aos/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
