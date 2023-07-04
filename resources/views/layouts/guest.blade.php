@@ -17,7 +17,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 
 </head>
 
@@ -25,8 +25,7 @@
 
     <header>
         <nav>
-            <div
-                class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
+            <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
 
                 <div class="flex">
 
@@ -36,30 +35,38 @@
 
                     <div class="m-5">
                         <button type="button" class="inline-flex flex-col items-center justify-center px-5  ">
-                            <svg class="w-6 h-6 mb-1 text-gray-800 dark:text-gray-400 hover-bg-rounded "
-                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true">
-                                <path
-                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
-                                </path>
-                            </svg>
+
+                            {{-- <a href="{{ route('tipsy.test') }}"> --}}
+                    <svg class="w-6 h-6 mb-1 text-gray-800 dark:text-gray-400 hover-bg-rounded" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true">
+
+                                    <path
+                                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                    </path>
+
+                                </svg>
+                            </a>
+                        </button>
                     </div>
 
 
-                <div class="flex items-center gap-8">
-                    <div class="group">
-                        <a href="" class="text-sm">Cocktail</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
+                    <div class="flex items-center gap-8">
+                        <div class="group">
+                            <a href="" class="text-sm">Cocktails</a>
+                            <img src="img/planche.svg" alt="planche"
+                                class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
+                        </div>
+                        <div class="group">
+                            <a href="" class="text-sm">Cocktails sans alcool</a>
+                            <img src="img/planche.svg" alt="planche"
+                                class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
+                        </div>
+                        <div class="group">
+                            <a href="{{ route('front.themes') }}" class="text-sm">Thèmes</a>
+                            <img src="img/planche.svg" alt="planche"
+                                class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
+                        </div>
                     </div>
-                    <div class="group">
-                        <a href="" class="text-sm">Cocktail sans alcool</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block ml-4 w-24 shadow-lg shadow-bleu hover:animate-fade-right hover:animate-duration-500">
-                    </div>
-                    <div class="group">
-                        <a href="" class="text-sm">Thème</a>
-                        <img src="img/planche.svg" alt="planche" class="hidden group-hover:block w-16 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu_clair animate-bounce">
-                    </div>
-                </div>
 
                 </div>
                 <div class="flex items-center ">
@@ -104,10 +111,10 @@
     <div class="font-sans text-gray-800 antialiased ">
         {{ $slot }}
     </div>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-          </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <footer>
 
     </footer>

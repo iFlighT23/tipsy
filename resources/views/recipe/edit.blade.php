@@ -11,7 +11,7 @@
     </x-slot>
 
     <div class="">
-        <form class="flex flex-col w-6/12 mx-auto" method="post" action="{{ route('recipes.update', $recipe) }}">
+     <form class="flex flex-col w-6/12 mx-auto" method="post" action="{{ route('recipes.update', $recipe) }}">
             @method('put')
             @csrf
             <input class="my-4 rounded" type='text' name='name' value="{{ $recipe->name }}">

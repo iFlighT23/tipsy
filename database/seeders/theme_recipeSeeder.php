@@ -12,6 +12,6 @@ class theme_recipeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+       
     }
 }

@@ -52,5 +52,5 @@ Route::get('/', function () {
 Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
 Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
 //model url de la route {theme est un paramètre}
-// transmet la valeur récupérée du {theme}paramètre à la theme methode dela FrontController classe.
+// transmet la valeur récupérée du {theme} paramètre à la theme methode de la FrontController classe.
 
