@@ -12,6 +12,7 @@ class FrontController extends Controller
         $themes = Theme::where('status', 1)->get();
         return view('tipsy.themes', compact('themes'));
     }
+    
 
     public function theme(Theme $theme)// affiche les recettes en fonctions des thèmes
     {
