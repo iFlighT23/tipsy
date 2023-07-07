@@ -71,7 +71,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex">
+
                     <div class="m-5 w-64 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
                         <div class="h-10">
                             <input class="text-center bg-sable_fonce font-pacifico text-lg my-3" wire:model='name'>
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
                 <div class="m-5">
                     {{ $descriptions }}
                 </div>

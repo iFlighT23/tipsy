@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Theme;
+use App\Models\Recipe;
 
 class FrontController extends Controller
 {

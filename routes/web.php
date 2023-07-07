@@ -33,11 +33,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('ingredients', AllIngredient::class)->name('ingredients');
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
     Route::get('/cocktails', Allrecipe::class)->name('cocktails');
+    Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
@@ -48,7 +48,7 @@ Route::middleware([
 
 Route::get('/', function () {
     return view('tipsy.accueil');
-});
+})->name('accueil');
 
 Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
 Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
