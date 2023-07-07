@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Recipe extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description','status'];
+    protected $fillable = ['name', 'description', 'status','url'];
 
     public function themes(): BelongsToMany
     {

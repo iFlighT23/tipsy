@@ -15,7 +15,6 @@ class RecipeController extends Controller
     public function index()
     {
 
-
         $recipes = Recipe::all();
         return view('recipe.index', compact('recipes'));
     }
@@ -44,8 +43,7 @@ class RecipeController extends Controller
 
         $recipe = Recipe::create($validated);
 
-
-
+        $recipe->themes()->sync($request->themes);
         $recipe->themes()->sync($request->themes);
 
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');

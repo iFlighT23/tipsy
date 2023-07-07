@@ -39,7 +39,6 @@ Route::middleware([
     Route::get('/cocktails', Allrecipe::class)->name('cocktails');
     Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
-
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
     // Route::get('/themes/create', [ThemeController::class,'create'])->name('themes.create');
@@ -52,3 +51,5 @@ Route::get('/', function () {
 
 Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
 Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
+Route::get('/sansalcool',[FrontController::class,'recipesWithoutAlcohol'])->name('sansalcool');
+
