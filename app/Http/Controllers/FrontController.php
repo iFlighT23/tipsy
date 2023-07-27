@@ -29,6 +29,13 @@ class FrontController extends Controller
         $recipes = Recipe::whereRelation('themes', 'id', 11)->get();
         return view('tipsy.sansalcool', compact('recipes'));
     }
+    public function index()
+    {
+        $themes = Theme::where('status', 1)->get();
+        return view('tipsy.accueil')->with(compact('themes'));
+    }
+
+
 
    
 

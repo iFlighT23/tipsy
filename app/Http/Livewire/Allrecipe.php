@@ -56,18 +56,6 @@ class Allrecipe extends Component
     }
 
 
-    public function search(Request $request)
-    {
-        $key = trim($request->get('q'));
-
-        $ingredients = Ingredient::query()
-            ->where('name', 'like', "%{$key}%")
-            // ->orWhere('recipe', 'like', "%{$key}%")
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        $recipes = Recipe::all();
-    }
 
     public function render()
     {

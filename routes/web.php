@@ -36,7 +36,6 @@ Route::middleware([
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
-    Route::get('/cocktails', Allrecipe::class)->name('cocktails');
     Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
@@ -46,11 +45,10 @@ Route::middleware([
     // Route::post('/themes', [ThemeController::class,'store'])->name('themes.store');
 });
 
-Route::get('/', function () {
-    return view('tipsy.accueil');
-})->name('accueil');
-
+Route::get('/cocktails', Allrecipe::class)->name('cocktails');
 Route::get('/all-themes', [FrontController::class,'themes'])->name('front.themes');
 Route::get('/all-themes/{theme}', [FrontController::class,'theme'])->name('front.theme');
 Route::get('/sansalcool',[FrontController::class,'recipesWithoutAlcohol'])->name('sansalcool');
+Route::get('/wordcloud',[FrontController::class,'themeFilter'])->name('worldcloud');
+Route::get('/',[FrontController::class,'index'])->name('accueil');
 

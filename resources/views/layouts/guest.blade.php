@@ -18,7 +18,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-
+    @livewireStyles
 </head>
 
 <body>
@@ -142,6 +142,7 @@
     <footer>
 
     </footer>
+    @livewireScripts
 </body>
 
 </html>

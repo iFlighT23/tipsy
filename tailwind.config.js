@@ -13,6 +13,13 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    safelist: [
+        { pattern: /bg-(red|yellow|green)-(600|600|600)/ },
+        { pattern: /text-(gray|yellow|green)-(700)/ },
+        { pattern: /ring-(gray|yellow|green)-(600)/ },
+        { pattern: /border-(gray|yellow|green)-(400)/ },
+    ],
+
     theme: {
         extend: {
             fontFamily: {
@@ -24,7 +31,8 @@ export default {
                 'sable_fonce': '#FECB75',
                 'rouge': '#FD5C5A',
                 'bleu_clair': '#8BDADA',
-                'bleu_fonce': '#4CC2C0'
+                'bleu_fonce': '#4CC2C0',
+                // 'red':'#D10E1A',
             },
             filter: {
                 'goo': "url('#goo')",

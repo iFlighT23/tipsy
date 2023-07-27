@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('themes', function (Blueprint $table) {// l'objet blueprint défini la structure de la table et ses classes
+        Schema::create('themes', function (Blueprint $table) {//  blueprint défini la structure de la table et ses classes
          //défini les colonnes.
             $table->id();
             $table->string ('name')->unique();
