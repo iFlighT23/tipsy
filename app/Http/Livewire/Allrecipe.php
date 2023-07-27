@@ -15,8 +15,13 @@ class Allrecipe extends Component
     public $isOpen = false;
     public $totalRecords;
     public $perPage = 10;
+    public $filterTheme = null, $search = '';
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'filterTheme' => ['except' => ''],
+    ];
 
-    public $name,$themes,$descriptions,$ingredients,$steps,$recipe_id;
+    public $name, $themes, $descriptions, $ingredients, $steps, $recipe_id;
 
     public function loadMore()
     {
@@ -48,9 +53,8 @@ class Allrecipe extends Component
         $this->recipe_id = $recipe->id;
 
         $this->openModal();
-
     }
-    
+
 
     public function search(Request $request)
     {
@@ -63,14 +67,12 @@ class Allrecipe extends Component
             ->get();
 
         $recipes = Recipe::all();
-
-            }
+    }
 
     public function render()
     {
-        // Theme::where('name', 'St Valentin')
 
-        // $filterTheme
+        $ingredients = Ingredient::where('name', 'LIKE', '%' . $this->search . '%')->get();
 
         $query = Recipe::query();
 
@@ -80,13 +82,10 @@ class Allrecipe extends Component
             });
         }
 
-        $recipes = $query->where('name', 'LIKE', '%'.$this->search.'%')->limit($this->perPage)->get();
+        $recipes = $query->where('name', 'LIKE', '%' . $this->search . '%')->limit($this->perPage)->get();
 
         $currentThemes = Theme::all();
 
         return view('tipsy.cocktails')->with(compact('recipes', 'currentThemes'))->layout('layouts.guest');
-
     }
-
 }
-
