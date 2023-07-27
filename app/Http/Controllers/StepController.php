@@ -24,7 +24,7 @@ class StepController extends Controller
     public function create()
     {
 
-        $ingredients = Ingredient::all()->sortBy('name');
+        $ingredients = Ingredient::all()->sortBy('name');//sortBy tri par nom (ordre alphabétique)
         $recipes = Recipe::all()->sortBy('name');
 
         return view('step.create', compact('ingredients', 'recipes'));

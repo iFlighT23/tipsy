@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Step;
 use App\Models\Recipe;
+use App\Models\Theme;
 use Livewire\Component;
 use App\Models\Ingredient;
 
@@ -13,6 +14,11 @@ class Allrecipe extends Component
     public $isOpen = false;
     public $totalRecords;
     public $perPage = 10;
+    public $filterTheme = null, $search = '';
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'filterTheme' => ['except' => ''],
+    ];
 
     public $name,$themes,$descriptions,$ingredients,$steps,$recipe_id;
 
@@ -51,8 +57,24 @@ class Allrecipe extends Component
 
     public function render()
     {
-        return view('tipsy.cocktails')->with('recipes', Recipe::limit($this->perPage)->get()
-    );
+        // Theme::where('name', 'St Valentin')
+
+        // $filterTheme
+
+        $query = Recipe::query();
+
+        if ($this->filterTheme != null) {
+            $query->whereHas('themes', function ($query) {
+                $query->where('theme_id', $this->filterTheme);
+            });
+        }
+
+        $recipes = $query->where('name', 'LIKE', '%'.$this->search.'%')->limit($this->perPage)->get();
+
+        $currentThemes = Theme::all();
+
+        return view('tipsy.cocktails')->with(compact('recipes', 'currentThemes'))->layout('layouts.guest');
+
     }
 
 }

@@ -18,7 +18,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-
+    @livewireStyles
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="m-5">
-                        <button type="button" class="inline-flex flex-col items-center justify-center px-5  ">
+                        <a href="{{ route('accueil') }}" class="inline-flex flex-col items-center justify-center px-5  ">
 
                             {{-- <a href="{{ route('tipsy.test') }}"> --}}
                     <svg class="w-6 h-6 mb-1 text-gray-800 dark:text-gray-400 hover-bg-rounded" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
@@ -46,13 +46,13 @@
 
                                 </svg>
                             </a>
-                        </button>
+                        </a>
                     </div>
 
 
                     <div class="flex items-center gap-8">
                         <div class="group">
-                            <a href="" class="text-sm">Cocktail</a>
+                            <a href="{{ route('cocktails') }}" class="text-sm">Cocktail</a>
                             <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
                         </div>
                         <div class="group">
@@ -108,6 +108,7 @@
     <footer>
 
     </footer>
+    @livewireScripts
 </body>
 
 </html>

@@ -2,15 +2,11 @@
 
     <div class=" bg-sable_clair">
 
-        {{-- <svg
-            class=" absolute h-screen w-screen bg-repeat z-0"style="background-image: url('http://www.w3.org/2000/svg') opacity-25">
-            <filter id='noiseFilter'>
-                <feTurbulence type='fractalNoise' baseFrequency='0.90
-                    ' numOctaves='5'
-                    stitchTiles='stitch' />
-            </filter>
-            <rect width='100%' height='100%' filter='url(#noiseFilter)' />
-        </svg> --}}
+        <div id="test" style="width: 100%; height: 100%"></div>
+        
+        @foreach ($themes as $theme)
+        <a href="{{ route('cocktails', ['filterTheme' => $theme->id]) }}">{{ $theme->name }}</a>
+        @endforeach
 
         <div class="relative py-12 px-24">
             <h1

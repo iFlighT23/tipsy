@@ -4,6 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Thèmes
         </h2>
+
         <a href="{{ route('themes.create') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-3">Ajouter un nouveau thème</a>
     </x-slot>
 
@@ -39,10 +40,14 @@
                         @endif
                     </td>
                     <td class="px-6 py-4 flex items-center gap-2">
+
                         <a href="{{ route('themes.edit', $theme) }}" class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">edit</a>
                         <form action="{{ route('themes.destroy', $theme) }}" method="post">
                             @csrf
                             @method('delete')
+                             {{-- ce formulaire est utilisé pour envoyer une requête de suppression
+                                 à une route spécifique dans Laravel en utilisant la méthode DELETE.
+                        Le paramètre $theme est utilisé pour identifier l'élément à supprimer --}}
                             <button type="submit" onclick="return confirm ('tu es sure coco?')" class="rounded-md border border-gray-600 text-sm text-gray-600 py-2 px-3 hover:bg-gray-200 hover:text-gray-400 cursor-pointer transition-all duration-200">delete</button>
                         </form>
                     </td>
