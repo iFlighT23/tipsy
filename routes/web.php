@@ -33,11 +33,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('ingredients', AllIngredient::class)->name('ingredients');
     Route::resource('steps', StepController::class);
     Route::resource('recipes', RecipeController::class);
     Route::resource('themes', ThemeController::class);
     Route::get('/cocktails', Allrecipe::class)->name('cocktails');
+    Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
