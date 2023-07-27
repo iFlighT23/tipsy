@@ -26,7 +26,6 @@
     <header>
         <nav>
             <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
-            <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
 
                 <div class="flex">
 

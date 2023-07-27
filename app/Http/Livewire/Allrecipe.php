@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Step;
 use App\Models\Theme;
 use App\Models\Recipe;
-use App\Models\Theme;
 use Livewire\Component;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
@@ -56,21 +55,8 @@ class Allrecipe extends Component
         $this->openModal();
 
     }
-    
 
-    public function search(Request $request)
-    {
-        $key = trim($request->get('q'));
 
-        $ingredients = Ingredient::query()
-            ->where('name', 'like', "%{$key}%")
-            // ->orWhere('recipe', 'like', "%{$key}%")
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        $recipes = Recipe::all();
-
-            }
 
     public function render()
     {
