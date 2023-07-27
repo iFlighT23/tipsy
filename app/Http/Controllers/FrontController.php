@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Theme;
 use App\Models\Recipe;
+use App\Models\Ingredient;
+use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -35,4 +37,7 @@ class FrontController extends Controller
 
 
 
+   
+
 }
+
