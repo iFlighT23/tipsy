@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Theme;
 use App\Models\Recipe;
+use App\Models\Ingredient;
+use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -12,7 +14,7 @@ class FrontController extends Controller
         $themes = Theme::where('status', 1)->get();
         return view('tipsy.themes', compact('themes'));
     }
-    
+
 
     public function theme(Theme $theme)// affiche les recettes en fonctions des thèmes
     {
@@ -28,4 +30,7 @@ class FrontController extends Controller
         return view('tipsy.sansalcool', compact('recipes'));
     }
 
+   
+
 }
+

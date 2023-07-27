@@ -49,7 +49,7 @@
                 @endforeach
             </div>
             <div class="flex justify-center">
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 hover: bg-gradient-to-b from-sable_clair to-sable_fonce via-rouge mt-8 rounded font-semibold text-sm text-gray-800 hover:bg-gradient-to-b from-red-200 to-red-500 via-cyan-400">Enregistrer</button>
+            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 hover: bg-gradient-to-b from-sable_clair to-sable-fonce via-rouge mt-8 rounded font-semibold text-sm text-gray-800 hover:bg-gradient-to-b from-red-200 to-red-500 via-cyan-400">Enregistrer</button>
             </div>
         </form>
     </div>

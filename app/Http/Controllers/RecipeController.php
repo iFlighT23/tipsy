@@ -87,6 +87,8 @@ class RecipeController extends Controller
         return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 
+ 
+
     /**
      * Remove the specified resource from storage.
      */
