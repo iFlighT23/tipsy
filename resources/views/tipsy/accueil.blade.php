@@ -4,10 +4,6 @@
 
         <div id="test" style="width: 100%; height: 100%"></div>
 
-        @foreach ($themes as $theme)
-        <a href="{{ route('cocktails', ['filterTheme' => $theme->id]) }}">{{ $theme->name }}</a>
-        @endforeach
-
         <div class="relative py-12 px-24">
             <h1
                 class="text-center font-pacifico text-5xl p-5b bg-gradient-to-b from-red-500 to-cyan-400 via-red-200 bg-clip-text text-transparent -rotate-6 py-5">
@@ -159,7 +155,9 @@
 
     </div>
 
-
+    @foreach ($themes as $theme)
+    @include('_partial.url', $theme)
+    @endforeach
 
 
 </x-guest-layout>

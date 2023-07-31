@@ -27,7 +27,7 @@
                         <td class="px-6 py-3">
                             @foreach ($recipe->themes as $theme)
                                 <div
-                                    class="text-xs text-center text-gray-900 bg-{{ $theme->color }}-500 py-1 px-2 rounded-full">
+                                    class="text-xs text-center text-gray-900 bg-{{ $theme->color }}-300 py-1 px-2 rounded-full">
                                     {{ $theme->name }}</div>
                             @endforeach
                         </td>

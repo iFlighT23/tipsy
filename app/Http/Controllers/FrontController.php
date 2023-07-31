@@ -26,8 +26,9 @@ class FrontController extends Controller
 
     public function recipesWithoutAlcohol()//on passe par le controleur pour afficher la vue, on créer aussi la route correspondante
     {
-        $recipes = Recipe::whereRelation('themes', 'id', 11)->get();
+        $recipes = Recipe::whereRelation('themes', 'id', 3)->get();
         return view('tipsy.sansalcool', compact('recipes'));
+
     }
     public function index()
     {
@@ -37,7 +38,7 @@ class FrontController extends Controller
 
 
 
-   
+
 
 }
 
