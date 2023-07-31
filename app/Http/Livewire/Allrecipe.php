@@ -21,7 +21,7 @@ class Allrecipe extends Component
         'filterTheme' => ['except' => ''],
     ];
 
-    public $name,$themes,$descriptions,$ingredients,$steps,$recipe_id;
+    public $name, $themes, $descriptions, $ingredients, $steps, $recipe_id;
 
     public function loadMore()
     {
@@ -52,17 +52,16 @@ class Allrecipe extends Component
         $this->steps = $recipe->steps;
         $this->recipe_id = $recipe->id;
 
-        $this->openModal();
 
+        $this->openModal();
     }
 
 
 
     public function render()
     {
-        // Theme::where('name', 'St Valentin')
 
-        // $filterTheme
+        $ingredients = Ingredient::where('name', 'LIKE', '%' . $this->search . '%')->get();
 
         $query = Recipe::query();
 
@@ -72,13 +71,10 @@ class Allrecipe extends Component
             });
         }
 
-        $recipes = $query->where('name', 'LIKE', '%'.$this->search.'%')->limit($this->perPage)->get();
+        $recipes = $query->where('name', 'LIKE', '%' . $this->search . '%')->limit($this->perPage)->get();
 
         $currentThemes = Theme::all();
 
         return view('tipsy.cocktails')->with(compact('recipes', 'currentThemes'))->layout('layouts.guest');
-
     }
-
 }
-

@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 use App\Models\Recipe;
+use App\Models\Theme;
 
 class RecipeSeeder extends Seeder
 {
@@ -12,45 +14,48 @@ class RecipeSeeder extends Seeder
      */
     public function run(): void
     {
-        Recipe::factory()->count(20)->create();
-        // \App\Models\User::factory(10)->create();
+/**
+ * Je transforme mon fichier json en tableau laravel
+ */
+        $collection = File::json(public_path("/recipes.json"));
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        Recipe::create([
-            'name' => 'Mojito',
-            'description' => 'Ce cocktail cubain à base de rhum, dont la réputation n’est plus à faire, est assez facile à préparer et est toujours apprécié. Délectez-vous de sa fraîcheur et de ses arômes de menthe et de citron vert… Vous ravirez les papilles de vos convives à coup sûr lors de vos soirées ou apéritifs !'
-        ]);
-        Recipe::create([
-            'name' => 'Pamplemousse et thé vert',
-            'description' => 'Cocktail au pamplemousse et thé vert sans alcool – Ingrédients :1 litre de thé vert,2 pamplemousses,3 cuil à soupe de sucre,sucre,zestes de citron jaune,...'
-        ]);
-        Recipe::create([
-            'name' => 'Bora Bora',
-            'description' => 'Ananas, passion, citron, grenadine... Voici la recette du cocktail sans alcool Bora Bora, à déguster en format solo ou XXL lors de vos soirées.'
-        ]);
-        Recipe::create([
-            'name' => 'Paradise',
-            'description' => 'La plus célèbre recette cocktail à base d’abricot brandy, pour un apéritif fruité classique, née vraisemblablement dans les années 1920s à Londres.'
-        ]);
-
-        Recipe::create([
-            'name' => 'Angel’s Face',
-            'description' => 'Sélectionné dans la liste des cocktails inoubliables par l’IBA. Cet apéritif propose un équilibre entre sec et doux aux saveurs d’abricot, de pomme et les notes florales du gin'
-        ]);
-
-        Recipe::create([
-            'name' => 'Enfer',
-            'description' => 'La plus célèbre recette cocktail à base d’abricot brandy, pour un apéritif fruité classique, née vraisemblablement dans les années 1920s à Londres.'
-        ]);
-
-        Recipe::create([
-            'name' => 'Paradise',
-            'description' => 'La plus célèbre recette cocktail à base d’abricot brandy, pour un apéritif fruité classique, née vraisemblablement dans les années 1920s à Londres.'
-        ]);
-
-
+/**
+ * Chaque ligne de mon tableau est stockées dans $value
+ * Si la colonne cateogry existe
+ * Et si Category est strcitement égal au 'text'
+ * Alors le $theme prends la valeur numérique indiquée.
+ * Si la colonne category existe pas, alors $theme sera null
+ * Le nom de la recette sera egale a la ligne 'nom' du tableau.
+ */
+        foreach ($collection as $value) {
+            if (array_key_exists('category', $value)) {
+                 if ($value['category'] === 'Before Dinner Cocktail'){
+                    $themeId = 1;
+                 } elseif ($value['category'] === 'All Day Cocktail') {
+                    $themeId = [3,6];
+                 } elseif ($value['category'] === 'After Dinner Cocktail') {
+                    $themeId = 8;
+                } elseif ($value['category'] === 'Longdrink') {
+                    $themeId = [4,7];
+                } elseif ($value['category'] === 'Sparkling Cocktail') {
+                    $themeId = 2;
+                } else {
+                    $themeId = 7;
+                }
+            } else {
+                $themeId = null;
+            }
+/**
+ * j'entre enfin les données obtenues dans ma table recipe
+ */
+            $recipe = Recipe::create([
+                'name'=>$value['name'],
+                'description'=>'test json'
+            ]);
+/**
+ * On synchronise ensuite l'id theme avec les recipes.
+ */
+            $recipe->themes()->sync($themeId);
+        }
     }
 }

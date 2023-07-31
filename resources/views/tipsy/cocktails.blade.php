@@ -51,7 +51,7 @@
             @endif
     </div>
 
-
+    {{-- JS pour le scroll --}}
     <script>
         const lastRecord = document.querySelector('#last_record');
         const options = {
@@ -71,6 +71,7 @@
     </script>
 
 
+    {{-- Modal --}}
     @if ($isOpen)
     <div class="fixed inset-0 flex items-center border backdrop-blur-sm justify-center drop-shadow-3xl ease-in duration-200 ">
         <div class="relative overflow-x-auto mt-8 mx-auto w-2/5 h-3/5 px-8 bg-sable_clair drop-shadow-3xl rounded-lg">

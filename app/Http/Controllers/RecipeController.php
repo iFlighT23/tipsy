@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Recipe;
 use App\Models\theme;
 
@@ -14,9 +15,12 @@ class RecipeController extends Controller
      */
     public function index()
     {
-
+        $collection = File::json(public_path("/recipes.json"));
+        // $collection = collect($json);
+        $ingredients = File::json(public_path("/ingredients.json"));
+        $collections = collect($ingredients);
         $recipes = Recipe::all();
-        return view('recipe.index', compact('recipes'));
+        return view('recipe.index', compact('recipes', 'collection', 'collections'));
     }
 
     /**
@@ -43,7 +47,6 @@ class RecipeController extends Controller
 
         $recipe = Recipe::create($validated);
 
-        $recipe->themes()->sync($request->themes);
         $recipe->themes()->sync($request->themes);
 
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');

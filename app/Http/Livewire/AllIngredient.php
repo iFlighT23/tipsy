@@ -26,6 +26,7 @@ class AllIngredient extends Component
     {
         return view('ingredient.index', [
             'ingredients' => Ingredient::where('name', 'LIKE', "%{$this->search}%")
+            ->orWhere('degree', 'LIKE', "%{$this->search}%")
             ->orderBY($this->orderField, $this->orderDirection)
             ->get()
         ])->layout('layouts.app');
