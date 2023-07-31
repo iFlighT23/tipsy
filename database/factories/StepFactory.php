@@ -16,12 +16,12 @@ class StepFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'step_number' => $this->faker->numberBetween(1,5),
-            'step_desc' => $this->faker->word,
-            'dose' => $this->faker->numberBetween(1,4),
-            'ingredient_id' => $this->faker->numberBetween(1,28),
-            'recipe_id' => $this->faker->numberBetween(1,28)
-        ];
+        // return [
+        //     'step_number' => $this->faker->numberBetween(1,5),
+        //     'step_desc' => $this->faker->word,
+        //     'dose' => $this->faker->numberBetween(1,4),
+        //     'ingredient_id' => $this->faker->numberBetween(1,28),
+        //     'recipe_id' => $this->faker->numberBetween(1,28)
+        // ];
     }
 }

@@ -45,14 +45,14 @@ class Allrecipe extends Component
         $this->steps = $recipe->steps;
         $this->recipe_id = $recipe->id;
 
+
         $this->openModal();
 
     }
 
     public function render()
     {
-        return view('tipsy.cocktails')->with('recipes', Recipe::limit($this->perPage)->get()
-    );
+        return view('tipsy.cocktails')->with('recipes', Recipe::limit($this->perPage)->get())->layout('layouts.guest');
     }
 
 }

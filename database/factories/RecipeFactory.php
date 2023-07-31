@@ -18,9 +18,9 @@ class RecipeFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => $this->faker->sentence(3),
-            'description' => $this->faker->text(150)
-        ];
+        // return [
+        //     'name' => $this->faker->sentence(3),
+        //     'description' => $this->faker->text(150)
+        // ];
     }
 }

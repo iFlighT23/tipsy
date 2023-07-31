@@ -19,13 +19,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 
+    @livewireStyles
+
 </head>
 
 <body>
 
     <header>
         <nav>
-            <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
             <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
 
                 <div class="flex">
@@ -50,7 +51,7 @@
 
                     <div class="flex items-center gap-8">
                         <div class="group">
-                            <a href="" class="text-sm">Cocktail</a>
+                            <a href="{{ route('cocktails')}}" class="text-sm">Cocktail</a>
                             <img src="/img/planche.svg" alt="planche" class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
                         </div>
                         <div class="group">
@@ -111,6 +112,8 @@
     <footer>
 
     </footer>
+    @livewireScripts
+
 </body>
 
 </html>

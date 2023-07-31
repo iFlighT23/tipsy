@@ -6,7 +6,7 @@
                     class="mx-8 w-64 my-8 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
                     <div class="flex-col w-64 rounded">
                         <div class="h-10">
-                            <h3 class="text-center capitalize font-pacifico text-lg m-3">{{ $recipe->name }}</h3>
+                            <h3 class="text-center capitalize font-pacifico text-xl m-3">{{ $recipe->name }}</h3>
                         </div>
                         <div class=" overflow-hidden cursor-pointer">
                             <button wire:click.prefetch='show({{ $recipe }})'><img
@@ -39,7 +39,7 @@
         @endif
     </div>
 
-
+    {{-- JS pour le scroll --}}
     <script>
         const lastRecord = document.querySelector('#last_record');
         const options = {
@@ -58,10 +58,12 @@
     </script>
 
 
+    {{-- Modal --}}
     @if ($isOpen)
         <div
             class="fixed inset-0 flex items-center border backdrop-blur-sm justify-center drop-shadow-3xl ease-in duration-200 ">
-            <div class="relative overflow-x-auto mt-8 mx-auto w-2/5 h-3/5 px-8 bg-sable_clair drop-shadow-3xl rounded-lg">
+            <div
+                class="relative overflow-x-auto mt-8 mx-auto w-1/2 h-3/4 px-8 bg-sable_clair drop-shadow-3xl rounded-lg">
                 <div class="flex justify-end mt-2">
                     <button wire:click='closeModal'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
@@ -71,16 +73,16 @@
                         </svg>
                     </button>
                 </div>
-
-                    <div class="m-5 w-64 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
+                <div class="flex">
+                    <div class="m-5 w-72 h-2/5 bg-sable_fonce rounded-lg text-center flex-col drop-shadow-3xl">
                         <div class="h-10">
                             <input class="text-center bg-sable_fonce font-pacifico text-lg my-3" wire:model='name'>
                         </div>
-                        <div class="py-4 overflow-hidden">
-                            <img class="object-cover h-72 w-64" src="{{ url('assets/cocktail2.jpg') }}" alt="cocktail">
+                        <div class="py-2 overflow-hidden">
+                            <img class="object-cover h-72 w-72" src="{{ url('assets/cocktail2.jpg') }}" alt="cocktail">
                         </div>
-                        <div class="flex mx-3">
-                            <div class="flex">
+                        <div class="flex pb-2 mx-3">
+                            <div class=" flex">
                                 <img src="assets/lemon1.svg" alt="Lemon">
                                 <img src="assets/lemon1.svg" alt="Lemon">
                                 <img src="assets/lemon1.svg" alt="Lemon">
@@ -91,10 +93,10 @@
                     </div>
 
                     <div class="flex-col mx-10 font-poppins">
-                        <div class="my-8">
-                            <h2 class="font-bold text-xl py-2">Ingrédients</h2>
-                            <div class="text-sm">
-                                <ul class="marker:text-rouge list-disc leading-6">
+                        <div class="my-4">
+                            <h2 class="font-bold text-xl">Ingrédients</h2>
+                            <div class="text-sm py-2">
+                                <ul class="leading-6">
                                     @foreach ($steps as $step)
                                         <li>{{ $step->ingredient->name }}</li>
                                     @endforeach
@@ -102,14 +104,14 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class="font-bold text-xl py-2">Etapes</h2>
-                            <div class="text-sm">
-                                <ul class="marker:text-rouge list-disc">
+                            <h2 class="font-bold text-xl">Etapes</h2>
+                            <div class="text-sm py-2">
+                                <ul class="leading-8">
                                     @foreach ($steps as $step)
                                         <li>Etape
                                             {{ $step->step_number }} -
                                             {{ $step->step_desc }}
-                                            {{ $step->dose }} dose de
+                                            {{ $step->dose }} {{str_contains($step->ingredient->name, 'dose') ? '' : 'dose(s) de'}}
                                             {{ $step->ingredient->name }}
                                         </li>
                                     @endforeach
@@ -124,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
                 <div class="m-5">
                     {{ $descriptions }}
                 </div>
@@ -132,4 +134,3 @@
         </div>
     @endif
 </div>
-
