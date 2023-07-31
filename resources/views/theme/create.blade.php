@@ -9,6 +9,8 @@
     </x-slot>
 
     <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">
+        {{-- lorsque le formulaire est soumis,
+             il enverra une requête POST à la route nommée 'themes.store' pour créer le nouveau thème --}}
         <form
             class="flex flex-col text-sm text-gray-500 uppercase bg-gray-50 rounded shadow-lg p-12 mt-12 dark:bg-gray-700 dark:text-gray-400"
             action='{{ route('themes.store') }}' method="post">

@@ -6,11 +6,15 @@
         </h2>
         <a href="{{ route('themes.index') }}" class="border border-green-600 text-green-600 rounded-md py-2 px-3">Retour aux thèmes</a>
     </x-slot>
-
+{{-- L'attribut action du formulaire est défini avec la méthode route('themes.update', $theme),
+ ce qui indique que lorsque le formulaire est soumis,
+ il enverra une requête POST à la route nommée 'themes.update' avec le paramètre $theme --}}
     <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">
         <form class="flex flex-col text-sm text-gray-500 uppercase bg-gray-50 rounded shadow-lg p-12 mt-12 dark:bg-gray-700 dark:text-gray-400" action='{{ route('themes.update', $theme)}}' method="post">
             @csrf
-
+{{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
+@csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
+ et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
             @method('PUT')
 
             <div class="py-4">

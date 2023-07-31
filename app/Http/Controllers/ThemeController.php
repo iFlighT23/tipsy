@@ -69,7 +69,7 @@ class ThemeController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request,Theme $theme)
-    // request = donées du formulaire
+    // request = données du formulaire
     {
         $theme->name = $request->name;//le nom de la variable theme est égale au nom dans le formulaire
         $theme->url = $request->url;
