@@ -25,7 +25,7 @@
                         <h3 class="text-center capitalize font-pacifico text-lg m-3">{{ $recipe->name }}</h3>
                     </div>
                     <div class=" overflow-hidden cursor-pointer">
-                        <button wire:click.prefetch='show({{ $recipe }})'><img class="object-cover h-72 w-64 transition-all duration-500 ease-in-out hover:scale-110" src="{{ url('assets/cocktails.jpg') }}" alt="cocktail">
+                        <button wire:click.prefetch='show({{ $recipe }})'><img class="object-cover h-72 w-64 transition-all duration-500 ease-in-out hover:scale-110" src="{{$recipe->url}}" alt="cocktail">
                         </button>
                     </div>
                     <div class="flex m-3">

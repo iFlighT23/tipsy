@@ -16,7 +16,7 @@ class ThemeSeeder extends Seeder
         theme::create([
             'name'=>'St Valentin',
             'status'=>1,
-            'url'=>'https://img.freepik.com/photos-gratuite/mise-plat-du-concept-belle-saint-valentin_23-2148717914.jpg?w=1800&t=st=1690186087~exp=1690186687~hmac=f90647e5771598e95f7c9e037607d57accdfeeb30dd74dbe6b432a6692a687a6',
+            'url'=>'assets/stValentin.jpeg',
             'color'=>'red'
         ]);
 
@@ -30,7 +30,7 @@ class ThemeSeeder extends Seeder
         Theme::create([
             'name'=>'Sans Alcool',
             'status'=> 1,
-            'url'=> 'https://plus.unsplash.com/premium_photo-1661544376223-0bed58e7adf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+            'url'=> 'https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
             'color'=>'emerald'
         ]);
 

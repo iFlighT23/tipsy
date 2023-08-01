@@ -28,11 +28,12 @@ class RecipeSeeder extends Seeder
  * Le nom de la recette sera egale a la ligne 'nom' du tableau.
  */
         foreach ($collection as $value) {
+            $url = 'https://images.unsplash.com/photo-1516633630673-67bbad747022?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80';
             if (array_key_exists('category', $value)) {
                  if ($value['category'] === 'Before Dinner Cocktail'){
                     $themeId = 1;
                  } elseif ($value['category'] === 'All Day Cocktail') {
-                    $themeId = [3,6];
+                    $themeId = [5,6];
                  } elseif ($value['category'] === 'After Dinner Cocktail') {
                     $themeId = 8;
                 } elseif ($value['category'] === 'Longdrink') {
@@ -40,7 +41,8 @@ class RecipeSeeder extends Seeder
                 } elseif ($value['category'] === 'Sparkling Cocktail') {
                     $themeId = 2;
                 } else {
-                    $themeId = 7;
+                    $themeId = 3;
+                    $url = 'https://resize.elle.fr/portrait_320_webp/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/cocktail-bora-bora-sans-alcool-2806526/50409614-1-fre-FR/Cocktail-Bora-Bora-sans-alcool.jpg';
                 }
             } else {
                 $themeId = null;
@@ -50,12 +52,14 @@ class RecipeSeeder extends Seeder
  */
             $recipe = Recipe::create([
                 'name'=>$value['name'],
-                'description'=>'test json'
+                'description'=>'test json',
+                'url'=> $url,
             ]);
 /**
  * On synchronise ensuite l'id theme avec les recipes.
  */
             $recipe->themes()->sync($themeId);
         }
+
     }
 }
