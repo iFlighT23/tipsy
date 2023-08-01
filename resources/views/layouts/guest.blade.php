@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-
-
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,18 +25,17 @@
     <header>
 
         {{-- Début de ma nav --}}
-
         <nav>
-            <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins pr-px">
+            <div class="flex justify-between items-center bg-bleu_clair w-auto h-20 font-poppins">
 
 
                 <div class="flex">
 
-                    <div>
+                    <div class="ml-5">
                         <x-application-logo />
                     </div>
 
-                    <div class="m-5">
+                    <div class="m-5  pt-1.5">
                         <a href="{{ route('accueil') }}">
                             <button type="button" class="inline-flex flex-col items-center justify-center px-5  ">
                                 <svg class="w-6 h-6 mb-1 text-gray-800 dark:text-gray-400 hover-bg-rounded "
@@ -89,14 +87,18 @@
 
                         {{-- Barre de recherche debut --}}
 
-
-                        <form action="{{ route('cocktails') }}" method="GET">
+                        <form action="{{ route('filter.ingredient') }}" method="POST">
 
                             @csrf
                             <div class="flex">
-                                <input type="text" id="simple-search" name="simple-search"
+
+                                {{-- {{ $_GET['search'] }} $_GET sert à récupérer : ['la valeur que j'ai dans mon search situé dans mon url'--La fonction isset() en PHP permet de vérifier si une variable est définie et n’est pas NULL --}}
+
+
+                                <input type="text" id="simple-search" name="search"
+                                    value="{{ isset($_GET['search']) ? $_GET['search'] : '' }}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Search" required>
+                                    placeholder="Search">
 
                                 <button type="submit"
                                     class="p-2.5 ml-2 font-mediumtext-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm text-center mr-2 ">

@@ -15,10 +15,11 @@ class Allrecipe extends Component
     public $isOpen = false;
     public $totalRecords;
     public $perPage = 10;
-    public $filterTheme = null, $search = '';
+    public $filterTheme = null, $filterIngredient = null, $search = '';
     protected $queryString = [
         'search' => ['except' => ''],
         'filterTheme' => ['except' => ''],
+        'filterIngredient' => ['except' => ''],
     ];
 
     public $name, $themes, $descriptions, $ingredients, $steps, $recipe_id;
@@ -55,13 +56,8 @@ class Allrecipe extends Component
         $this->openModal();
     }
 
-
-
     public function render()
     {
-
-        $ingredients = Ingredient::where('name', 'LIKE', '%' . $this->search . '%')->get();
-
         $query = Recipe::query();
 
         if ($this->filterTheme != null) {
@@ -70,10 +66,22 @@ class Allrecipe extends Component
             });
         }
 
-        $recipes = $query->where('name', 'LIKE', '%' . $this->search . '%')->limit($this->perPage)->get();
+        // on a définit la requête de search avec les valeurs demandées dans mon formulaire
+
+        if ($this->search != null) {
+            $query->whereHas('ingredients', function ($query) {
+                $query->where('name', 'LIKE', '%' . $this->search . '%');
+            })
+            ->orWhere('name', 'LIKE', '%' . $this->search . '%');
+        }
+
+        $recipes = $query->limit($this->perPage)->get();
 
         $currentThemes = Theme::all();
+        $search = $this->search;
 
-        return view('tipsy.cocktails')->with(compact('recipes', 'currentThemes'))->layout('layouts.guest');
+        // retourne la vue(('tipsy.cocktail') avec le nom de mes variables recipes, currentThemes, search) on va lui dire d'utilisé le layout.guest
+
+        return view('tipsy.cocktails')->with(compact('recipes', 'currentThemes', 'search'))->layout('layouts.guest');
     }
 }

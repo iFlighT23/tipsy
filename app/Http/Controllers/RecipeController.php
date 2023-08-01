@@ -44,8 +44,7 @@ class RecipeController extends Controller
         $recipe = Recipe::create($validated);
 
         $recipe->themes()->sync($request->themes);
-        $recipe->themes()->sync($request->themes);
-
+      
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
     }
 
@@ -87,7 +86,7 @@ class RecipeController extends Controller
         return redirect('recipes')->with('success', 'recette modifiée avec succès');
     }
 
- 
+
 
     /**
      * Remove the specified resource from storage.

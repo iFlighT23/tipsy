@@ -1,11 +1,9 @@
 <x-guest-layout>
 
-    <div class=" bg-sable_clair">
-
-        <div id="test" style="width: 100%; height: 100%"></div>
+    <div class="px-10" style="background-image: url('assets/bgsable2.jpg')">
 
         @foreach ($themes as $theme)
-        <a href="{{ route('cocktails', ['filterTheme' => $theme->id]) }}">{{ $theme->name }}</a>
+            <a href="{{ route('cocktails', ['filterTheme' => $theme->id]) }}">{{ $theme->name }}</a>
         @endforeach
 
         <div class="relative py-12 px-24">
@@ -43,9 +41,24 @@
                         <img src="img/lemon.svg" alt="Lemon" class="lemon opacity-30">
                     </div>
                     <div class="flex items-center">
-                        <button
-                            class="h-10 w-14  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-cyan-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none"><span
-                                class="relative z-10 hover:text-black ">Share</span>
+                        <button>
+                            {{-- class="h-10 w-14  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-cyan-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none"><span
+                                class="relative z-10 hover:text-black ">Share</span>> --}}
+
+                            <div class="flex translate-y-9 z-50 border pt-1.5">
+                                <a href="https://www.tiktok.com/fr">
+                                    <img src="img/Tiktok.svg" alt="Partager sur Tiktok">
+                                </a>
+                                <a href="https://www.instagram.com">
+                                    <img src="img/Instagram.svg" alt="Partager sur Instagram">
+                                </a>
+                                <a href="https://accounts.snapchat.com">
+                                    <img src="img/snap.svg" alt="Partager sur Snapchat">
+                                </a>
+                                <a href="https://twitter.com">
+                                    <img src="img/Twitter.svg" alt="Partager sur Twitter">
+                                </a>
+                            </div>
                         </button>
                     </div>
 
@@ -154,6 +167,30 @@
             </div>
             <div>
                 <p class="font-poppins m-5">Munissez vous de votre plus beau shaker</p>
+            </div>
+            <div>
+
+                {{-- carousel debut --}}
+
+    	<!-- Carousel Start -->
+	<div x-data="carousel()" x-init="init()" x-ref="carousel" x-on:autoplay-start="startAutoplay()" x-on:autoplay-stop="stopAutoplay()" class="relative">
+
+        <div class="overflow-hidden image-clip">
+            <img :src="images[selected]" class="h-40 w-full object-cover object-center" alt="ustensiles" />
+        </div>
+
+            <!-- Pagination Dots Start -->
+            <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-4">
+                <template x-for="(image,index) in images" :key="index">
+                    <button @click="selectImage(index)" class="h-4 w-4 rounded-full hover:bg-gray-300 ring-2 ring-gray-300" :class="{'bg-gray-800': selected == index, 'bg-gray-500': selected != index}"></button>
+                </template>
+            </div>
+            <!-- Pagination Dots End -->
+
+        </div>
+        <!-- Carousel End -->
+    </body>
+                {{-- carousel fin --}}
             </div>
         </div>
 

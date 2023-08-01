@@ -1,7 +1,5 @@
 <div>
 
-    <input wire:model="search" type="search" placeholder="Search posts by title...">
-
     <div class="">
         <fieldset wire:model="filterTheme" class="space-y-6">
             <div class="flex   ">

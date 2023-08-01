@@ -29,15 +29,25 @@ class FrontController extends Controller
         $recipes = Recipe::whereRelation('themes', 'id', 11)->get();
         return view('tipsy.sansalcool', compact('recipes'));
     }
+
     public function index()
     {
         $themes = Theme::where('status', 1)->get();
         return view('tipsy.accueil')->with(compact('themes'));
     }
 
+    public function filterIngredient(Request $request)
+
+    {
+    // sert à retourner sur la route cocktails dans mon search  avec la valeur qui est demandé(valeur de la requête de mon input de mon formulaire)(de la barre de recherche)
 
 
-   
+        return redirect()->route('cocktails', ['search' => $request->search]);
+    }
+
+
+
+
 
 }
 
