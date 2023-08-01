@@ -1,17 +1,21 @@
 <div>
 
-    <div class="">
-        <fieldset wire:model="filterTheme" class="space-y-6">
-            <div class="flex   ">
-                @foreach ($currentThemes as $theme)
-                <input type="radio" id="{{ $theme->id }}" value="{{ $theme->id }}" {{ $this->filterTheme == $theme->id ? 'checked' : '' }} class="absolute h-0 w-0 appearance-none ">
-                <label for="{{ $theme->id }}" class="relative flex flex-col bg-{{ $theme->color }}-600 p-2 rounded-lg shadow-xl bg-red-200 cursor-pointer m-4">{{ $theme->name }} </label>
-                @endforeach
-            </div>
-        </fieldset>
-    </div>
-
-    <div class="px-10" style="background-image: url('assets/bgsable2.jpg')">
+    <div style="background-image: url('assets/bgsable2.jpg')">
+        <div class="px-4 py-8">
+            <fieldset wire:model="filterTheme" class="space-y-6">
+                <div class="flex justify-between gap-4">
+                    <a href="{{ route('cocktails') }}" class="relative flex flex-col hover:rotate-1 transition-all bg-bleu_clair group w-full bg-cover text-center font-pacifico text-xl  hover:saturate-200 p-2 rounded-lg shadow-xl cursor-pointer">Tous</a>
+                    @foreach ($currentThemes as $theme)
+                    @php
+                    $minus = Arr::random(['-', '']);
+                    $angle = Arr::random(['2', '3', '6']);
+                    @endphp
+                    <input type="radio" id="{{ $theme->id }}" value="{{ $theme->id }}" {{ $this->filterTheme == $theme->id ? 'checked' : '' }} class="absolute h-0 w-0 appearance-none ">
+                    <label for="{{ $theme->id }}" class="relative flex flex-col {{ $minus.'rotate-'.$angle }} hover:rotate-1 transition-all bg-{{ $theme->color }}-300 group flex-wrap w-full min-w-[100px] bg-cover text-center py-2 md:flex-col  m-auto font-pacifico text-xl  hover:saturate-200  rounded-lg shadow-xl cursor-pointer">{{ $theme->name }} </label>
+                    @endforeach
+                </div>
+            </fieldset>
+        </div>
         <div class="flex flex-wrap justify-center py-8" style="background-image: url('assets/bgsable2.jpg')">
             @foreach ($recipes as $recipe)
             <div @if ($loop->last) id="last_record" @endif
@@ -21,7 +25,7 @@
                         <h3 class="text-center capitalize font-pacifico text-lg m-3">{{ $recipe->name }}</h3>
                     </div>
                     <div class=" overflow-hidden cursor-pointer">
-                        <button wire:click.prefetch='show({{ $recipe }})'><img class="object-cover h-72 w-64 transition-all duration-500 ease-in-out hover:scale-110" src="{{ url('assets/cocktails.jpg') }}" alt="cocktail">
+                        <button wire:click.prefetch='show({{ $recipe }})'><img class="object-cover h-72 w-64 transition-all duration-500 ease-in-out hover:scale-110" src="{{$recipe->url}}" alt="cocktail">
                         </button>
                     </div>
                     <div class="flex m-3">
@@ -47,7 +51,7 @@
             @endif
     </div>
 
-
+    {{-- JS pour le scroll --}}
     <script>
         const lastRecord = document.querySelector('#last_record');
         const options = {
@@ -67,6 +71,7 @@
     </script>
 
 
+    {{-- Modal --}}
     @if ($isOpen)
     <div class="fixed inset-0 flex items-center border backdrop-blur-sm justify-center drop-shadow-3xl ease-in duration-200 ">
         <div class="relative overflow-x-auto mt-8 mx-auto w-2/5 h-3/5 px-8 bg-sable_clair drop-shadow-3xl rounded-lg">

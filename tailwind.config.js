@@ -14,10 +14,11 @@ export default {
     ],
 
     safelist: [
-        { pattern: /bg-(red|yellow|green)-(600|600|600)/ },
+        { pattern: /bg-(red|yellow|green|sky|amber|blue|orange|purple|pink|emerald)-(400|100|200|500|300|600)/ },
         { pattern: /text-(gray|yellow|green)-(700)/ },
         { pattern: /ring-(gray|yellow|green)-(600)/ },
-        { pattern: /border-(gray|yellow|green)-(400)/ },
+        { pattern: /rotate-(2|3|6)/ },
+
     ],
 
     theme: {
@@ -32,7 +33,8 @@ export default {
                 'rouge': '#FD5C5A',
                 'bleu_clair': '#8BDADA',
                 'bleu_fonce': '#4CC2C0',
-                // 'red':'#D10E1A',
+               // 'red':'#D10E1A',
+
             },
             filter: {
                 'goo': "url('#goo')",
@@ -44,7 +46,7 @@ export default {
             },
             height: {
                 '85': '22rem',
-              },
+            },
         },
     },
 

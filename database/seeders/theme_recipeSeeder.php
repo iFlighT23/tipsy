@@ -9,6 +9,14 @@ class theme_recipeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * After Dinner Cocktail
+     * All Day Cocktail
+     * Before Dinner Cocktail
+     * Hot Drink
+     * Longdrink
+     * Sparkling Cocktail
+     *
      */
     public function run(): void
     {

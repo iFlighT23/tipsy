@@ -196,7 +196,9 @@
 
     </div>
 
-
+    @foreach ($themes as $theme)
+    @include('_partial.url', $theme)
+    @endforeach
 
 
 </x-guest-layout>

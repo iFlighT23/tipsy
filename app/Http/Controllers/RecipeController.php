@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Recipe;
 use App\Models\theme;
 
@@ -14,7 +15,6 @@ class RecipeController extends Controller
      */
     public function index()
     {
-
         $recipes = Recipe::all();
         return view('recipe.index', compact('recipes'));
     }
@@ -44,7 +44,7 @@ class RecipeController extends Controller
         $recipe = Recipe::create($validated);
 
         $recipe->themes()->sync($request->themes);
-      
+
         return redirect('recipes')->with('success', 'recette ajoutée avec succès');
     }
 

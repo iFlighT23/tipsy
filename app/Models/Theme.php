@@ -15,6 +15,7 @@ class Theme extends Model
 
     public function recipes(): BelongsToMany// relation n,n.
     {
-        return $this->belongsToMany(Recipe::class);
+        return $this->belongsToMany(Recipe::class);// $this reprends l'objet courant thème
+        //belongstoMany : thème appartient à plusieurs recettes.
     }
 }
