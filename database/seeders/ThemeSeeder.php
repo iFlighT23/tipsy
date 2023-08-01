@@ -16,7 +16,7 @@ class ThemeSeeder extends Seeder
         theme::create([
             'name'=>'St Valentin',
             'status'=>1,
-            'url'=>'https://img.freepik.com/photos-gratuite/mise-plat-du-concept-belle-saint-valentin_23-2148717914.jpg?w=1800&t=st=1690186087~exp=1690186687~hmac=f90647e5771598e95f7c9e037607d57accdfeeb30dd74dbe6b432a6692a687a6',
+            'url'=>'assets/StValentin.jpeg',
             'color'=>'red'
         ]);
 

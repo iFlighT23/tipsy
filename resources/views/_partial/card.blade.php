@@ -16,9 +16,6 @@
                 <img src="/assets/lemon.svg" alt="Lemon">
                 <img src="/assets/lemon.svg" alt="Lemon">
             </div>
-
-               
-
         </div>
     </div>
 </div>
