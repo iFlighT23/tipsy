@@ -3,15 +3,15 @@
     <div style="background-image: url('assets/bgsable2.jpg')">
         <div class="px-4 py-8">
             <fieldset wire:model="filterTheme" class="space-y-6">
-                <div class="flex justify-between gap-4">
-                    <a href="{{ route('cocktails') }}" class="relative flex flex-col hover:rotate-1 transition-all bg-bleu_clair group w-full bg-cover text-center font-pacifico text-xl  hover:saturate-200 p-2 rounded-lg shadow-xl cursor-pointer">Tous</a>
+                <div class="flex flex-wrap justify-between gap-4">
+                    <a href="{{ route('cocktails') }}" class="relative flex flex-col hover:rotate-1 transition-all text-center font-pacifico text-xl  hover:saturate-200 p-2 rounded-lg shadow-xl cursor-pointer {{ $this->filterTheme == null ? ' rotate-1 ring-offset-4 ring-2 ring-bleu_clair ring-offset-transparent' : 'bg-bleu_clair' }}">Tous</a>
                     @foreach ($currentThemes as $theme)
                     @php
                     $minus = Arr::random(['-', '']);
                     $angle = Arr::random(['2', '3', '6']);
                     @endphp
                     <input type="radio" id="{{ $theme->id }}" value="{{ $theme->id }}" {{ $this->filterTheme == $theme->id ? 'checked' : '' }} class="absolute h-0 w-0 appearance-none ">
-                    <label for="{{ $theme->id }}" class="relative flex flex-col {{ $minus.'rotate-'.$angle }} hover:rotate-1 transition-all bg-{{ $theme->color }}-300 group flex-wrap w-full min-w-[100px] bg-cover text-center py-2 md:flex-col  m-auto font-pacifico text-xl  hover:saturate-200  rounded-lg shadow-xl cursor-pointer">{{ $theme->name }} </label>
+                    <label for="{{ $theme->id }}" class="relative flex flex-col hover:rotate-1 transition-all text-center py-2 px-4 font-pacifico text-xl  hover:saturate-200  rounded-lg shadow-xl cursor-pointer {{ $this->filterTheme == $theme->id ? ' rotate-1 ring-offset-4 ring-2 ring-bleu_clair ring-offset-transparent' : $minus.'rotate-'.$angle.' bg-'.$theme->color.'-300' }}">{{ $theme->name }} </label>
                     @endforeach
                 </div>
             </fieldset>
