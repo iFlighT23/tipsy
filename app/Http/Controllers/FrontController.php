@@ -45,11 +45,5 @@ class FrontController extends Controller
 
         return redirect()->route('cocktails', ['search' => $request->search]);
     }
-
-
-
-
-
-
 }
 

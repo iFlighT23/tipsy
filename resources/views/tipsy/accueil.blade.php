@@ -79,7 +79,6 @@
                             <button class="h-10 w-14  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-cyan-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none"><span class="relative z-10 hover:text-black ">Share</span>
                             </button>
                         </div>
-
                     </div>
                 </div>
                 <div class="group transition cursor-pointer duration-300 ease-in-out flex flex-col items-stretch w-64  rotate-6 bg-sable_fonce rounded hover:shadow grpup hover:-rotate-6 hover:drop-shadow-xl relative max-w-xs overflow-hidden hover:bg-gradient-to-thover: from-rose-500 hover: via-red-500 hover: to-red-100">
