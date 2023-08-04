@@ -52,4 +52,5 @@ Route::get('/sansalcool',[FrontController::class,'recipesWithoutAlcohol'])->name
 Route::get('/wordcloud',[FrontController::class,'themeFilter'])->name('worldcloud');
 Route::get('/',[FrontController::class,'index'])->name('accueil');
 Route::post('/filterIngredient', [FrontController::class, 'filterIngredient'])->name('filter.ingredient');
+Route::post('/check-age', [FrontController::class,'checkAge'])->name('check.age');
 

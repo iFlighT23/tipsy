@@ -27,6 +27,7 @@
                     <div class=" overflow-hidden cursor-pointer">
                         <button wire:click.prefetch='show({{ $recipe }})'><img class="object-cover h-72 w-64 transition-all duration-500 ease-in-out hover:scale-110" src="{{$recipe->url}}" alt="cocktail">
                         </button>
+                        {{-- wire:click: composant de liewire qui active au click la function show --}}
                     </div>
                     <div class="flex m-3">
                         <div class="flex">
