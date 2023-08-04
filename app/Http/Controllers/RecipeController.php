@@ -9,8 +9,8 @@ use App\Models\Recipe;
 use App\Models\theme;
 
 class RecipeController extends Controller
-{
-    /**
+{0
+²0    /**
      * Display a listing of the resource.
      */
     public function index()
@@ -53,7 +53,6 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-
         return view('recipe.show', compact('recipe'));
     }
 

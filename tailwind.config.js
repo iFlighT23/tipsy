@@ -3,7 +3,6 @@ import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
 
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -33,7 +32,7 @@ export default {
                 'rouge': '#FD5C5A',
                 'bleu_clair': '#8BDADA',
                 'bleu_fonce': '#4CC2C0',
-               // 'red':'#D10E1A',
+                // 'red':'#D10E1A',
 
             },
             filter: {
@@ -53,7 +52,14 @@ export default {
     plugins: [forms, typography],
 
     plugins: [
-      require('tailwindcss-animated')
+        require('tailwindcss-animated')
+
+
     ],
 
+
+
 };
+
+
+

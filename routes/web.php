@@ -39,6 +39,8 @@ Route::middleware([
     Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
+    
+
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
     // Route::get('/themes/create', [ThemeController::class,'create'])->name('themes.create');

@@ -36,7 +36,7 @@ lemons.forEach((lemon, index) => {
 
     //    On utilise également une variable pour stocker le nombre de clics pour chaque élément
 
-      lemon.style.opacity = "0.8";
+      lemon.style.opacity = "100";
 
     //  On modifie la propriété opacity en conséquence.
       clickCount++;
@@ -47,36 +47,22 @@ lemons.forEach((lemon, index) => {
   });
 });
 
-const carousel = () => {
-	let autoplayInterval;
 
-	return {
-		selected: 0,
-		images: [
-			"https://www.cdiscount.com/pdt2/1/6/4/1/700x700/out5781532912164/rw/10-ensembles-d-outils-de-barman-pour-bar-a-cocktai.jpg",
-			"https://maidestept.ro/wp-content/uploads/2020/08/17287746.jpg",
-			"https://m.media-amazon.com/images/I/61Q0eDeyQqL._AC_SX522_.jpg",
-			"https://ae01.alicdn.com/kf/Hfd49deb323ad4d58bdcf56f2f234d5a6d/Cocktail-Martini-Glass-Wine-Glasses-Beer-Juice-Drink-Cup.jpg"
 
-		],
-		init() {
-			this.startAutoplay();
-		},
-		startAutoplay() {
-			autoplayInterval = setInterval(() => {
-				this.next();
-			}, 3000); // Adjust the interval time (in milliseconds) as needed
-		},
-		stopAutoplay() {
-			clearInterval(autoplayInterval);
-		},
-		selectImage(index) {
-			this.selected = index;
-			this.stopAutoplay(); // Stop autoplay when a pagination button is clicked
-			this.startAutoplay(); // Restart autoplay after selecting a new image
-		},
-		next() {
-			this.selected = (this.selected + 1) % this.images.length;
-		}
-	};
-};
+let defaultTransform = 0;
+function goNext() {
+    defaultTransform = defaultTransform - 398;
+    let slider = document.getElementById("slider");
+    if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+}
+next.addEventListener("click", goNext);
+function goPrev() {
+    let slider = document.getElementById("slider");
+    if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+    else defaultTransform = defaultTransform + 398;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+}
+prev.addEventListener("click", goPrev);
+
+
