@@ -6,8 +6,10 @@ use App\Models\Recipe;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
+
 class FrontController extends Controller
 {
+
 
     public function themes()//affiche les thèmes
     {
@@ -33,8 +35,16 @@ class FrontController extends Controller
 
     public function index()
     {
-        $themes = Theme::where('status', 1)->get();
-        return view('tipsy.accueil')->with(compact('themes'));
+        if (session('age_verified')) {
+            // Si l'âge est vérifié, continuez vers la page d'accueil normale
+            $themes = Theme::where('status', 1)->get();
+            return view('tipsy.accueil')->with(compact('themes'));
+        } else {
+            // Sinon, affichez le modal d'âge
+            return view('tipsy.checkAge');
+        }
+
+
     }
 
     public function filterIngredient(Request $request)
@@ -45,5 +55,29 @@ class FrontController extends Controller
 
         return redirect()->route('cocktails', ['search' => $request->search]);
     }
+
+    public function checkAge(Request $request)
+    {
+        $age = $request->input('age');
+
+        // Vérifiez l'âge de l'utilisateur
+        if ($age >= 18) {
+            // Stockez l'âge vérifié dans la session
+            $request->session()->put('age_verified', true);
+            return redirect()->route('cocktails');
+        } else {
+            // Redirigez l'utilisateur vers le modal d'âge
+            $request->session()->put('age_verified', false);
+            return redirect()->route('sansalcool');
+            // return redirect()->route('accueil')->with('error', 'Vous devez être majeur pour accéder au site.');
+        }//with créer une variable de session
+
+        // Redirigez l'utilisateur vers la page d'accueil normale
+
+    }
+
+
+
+
 }
 

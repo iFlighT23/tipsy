@@ -33,6 +33,7 @@
                                 class="h-56 bg-cover bg-no-repeat bg-center hover:scale-125 overflow-hidden max-w-xs transition duration-300 ease-in-out"
                                 src="{{ $recipe->url }}">
                         </button>
+                        {{-- wire:click: composant de liewire qui active au click la function show --}}
                     </div>
                     <div class="flex m-3 justify-between">
                         <div class="flex">

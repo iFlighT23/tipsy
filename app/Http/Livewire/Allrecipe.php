@@ -44,7 +44,7 @@ class Allrecipe extends Component
  */
     public function openModal()
     {
-        $this->isOpen = true;
+        $this->isOpen = true;// variable isOpen est vrai, on définit la variable comme vrai qui sera rappelé dans la vue cokctails
     }
 /**
  * Fonction closeModal
@@ -66,7 +66,7 @@ class Allrecipe extends Component
         $this->recipe_id = $recipe->id;
 
 
-        $this->openModal();
+        $this->openModal(); // appel la fonction openModal definit plus haut
     }
 /**
  * On retourne la vue tipsy.cocktails via guest.layouts, avec 2 requêtes :

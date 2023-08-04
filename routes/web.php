@@ -39,6 +39,8 @@ Route::middleware([
     Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
+    
+
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
     // Route::get('/themes/create', [ThemeController::class,'create'])->name('themes.create');
@@ -52,4 +54,5 @@ Route::get('/sansalcool',[FrontController::class,'recipesWithoutAlcohol'])->name
 Route::get('/wordcloud',[FrontController::class,'themeFilter'])->name('worldcloud');
 Route::get('/',[FrontController::class,'index'])->name('accueil');
 Route::post('/filterIngredient', [FrontController::class, 'filterIngredient'])->name('filter.ingredient');
+Route::post('/check-age', [FrontController::class,'checkAge'])->name('check.age');
 
