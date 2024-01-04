@@ -40,11 +40,14 @@
 
                     </button>
                 </a>
+
+                @if(session('age_verified'))
                 <div class="group">
                     <a href="{{ route('cocktails') }}" class="text-sm">Cocktails</a>
                     <img src="/img/planche.svg" alt="planche"
                         class="hidden group-hover:block w-20 transition duration-500 transform group-hover:translate-x-10 -rotate-3 shadow-lg shadow-bleu animate-bounce">
                 </div>
+                @endif
 
                 <div class="group">
                     <a href="{{ route('sansalcool') }}" class="text-sm">Cocktails sans alcool</a>
