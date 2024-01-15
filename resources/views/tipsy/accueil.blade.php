@@ -322,4 +322,5 @@
         @endforeach
     </div>
 
+    @include('_partial.footer')
 </x-guest-layout>

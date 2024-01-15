@@ -8,5 +8,5 @@
     @include('_partial.card', $recipe)
     @endforeach
     </div>
-
+    
 </x-guest-layout>

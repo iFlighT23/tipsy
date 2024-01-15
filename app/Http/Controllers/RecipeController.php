@@ -9,8 +9,8 @@ use App\Models\Recipe;
 use App\Models\theme;
 
 class RecipeController extends Controller
-{0
-²0    /**
+{
+   /**
      * Display a listing of the resource.
      */
     public function index()

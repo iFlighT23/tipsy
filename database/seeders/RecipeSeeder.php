@@ -42,7 +42,7 @@ class RecipeSeeder extends Seeder
                     $themeId = 2;
                 } else {
                     $themeId = 3;
-                    $url = 'https://resize.elle.fr/portrait_320_webp/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/cocktail-bora-bora-sans-alcool-2806526/50409614-1-fre-FR/Cocktail-Bora-Bora-sans-alcool.jpg';
+                    $url = 'https://images.pexels.com/photos/1028637/pexels-photo-1028637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
                 }
             } else {
                 $themeId = null;

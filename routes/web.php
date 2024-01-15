@@ -39,7 +39,7 @@ Route::middleware([
     Route::get('ingredients', AllIngredient::class)->name('ingredients');
 
 
-    
+
 
     // Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     // Route::get('/themes/edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
@@ -55,4 +55,8 @@ Route::get('/wordcloud',[FrontController::class,'themeFilter'])->name('worldclou
 Route::get('/',[FrontController::class,'index'])->name('accueil');
 Route::post('/filterIngredient', [FrontController::class, 'filterIngredient'])->name('filter.ingredient');
 Route::post('/check-age', [FrontController::class,'checkAge'])->name('check.age');
+Route::post('/form', [FrontController::class, 'create'])->name('tipsy.form');
+Route::get('/mentionsLegales', [FrontController::class, 'mentions'])->name('tipsy.mentions');
+Route::get('/cookies', [FrontController::class, 'cookies'])->name('tipsy.cookies');
+Route::get('/CGU', [FrontController::class, 'conditions'])->name('tipsy.conditions');
 

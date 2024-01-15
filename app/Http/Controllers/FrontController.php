@@ -5,7 +5,7 @@ use App\Models\Theme;
 use App\Models\Recipe;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
-
+use illuminate\Support\Facades\mail;
 
 class FrontController extends Controller
 {
@@ -75,9 +75,40 @@ class FrontController extends Controller
         // Redirigez l'utilisateur vers la page d'accueil normale
 
     }
+    public function create()// appel la vue
+    {
+        return view('tipsy.form');
+    }
 
+    public function store(Request $request)
+    {
+        // Validez les entrées du formulaire ici selon vos besoins.
+        $mail = new mail;
+        $mail = $request->input('email');
+        $mail = $request->input('message');
+        $toEmail = 'corinneeasy555@gmail.com'; // Adresse e-mail externe de destination
 
+        // Envoi de l'e-mail
+        Mail::send([], [], function ($message) use ($mail) {
+            $message->to($mail);
 
+        });
 
+        return redirect()->back()->with('success', 'E-mail envoyé avec succès !');
+    }
+
+    public function mentions()// appel la vue
+    {
+        return view('tipsy.mentions');
+    }
+
+    public function cookies()// appel la vue
+    {
+        return view('tipsy.cookies');
+    }
+
+    public function conditions()// appel la vue
+    {
+        return view('tipsy.conditions');
+    }
 }
-
