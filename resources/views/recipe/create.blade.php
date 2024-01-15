@@ -1,6 +1,5 @@
 <x-app-layout>
-
-
+    
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Crée une recette
@@ -20,7 +19,7 @@
                 <label class="font-semibold text-gray-800" for="name" >Recette:</label>
                 <input class="flex items-center h-8 px-4 w-96 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
                     type='text' name='name' placeholder="Entrer le nom de la recette"
-                    class="border border-gray-600 @error('name') border-red-600 @enderror">
+                    class="border border-gray_600 @error('name') border-red_600 @enderror">
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -49,7 +48,7 @@
                 @endforeach
             </div>
             <div class="flex justify-center">
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 hover: bg-gradient-to-b from-sable_clair to-sable-fonce via-rouge mt-8 rounded font-semibold text-sm text-gray-800 hover:bg-gradient-to-b from-red-200 to-red-500 via-cyan-400">Enregistrer</button>
+            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 hover: bg-gradient-to-b from-sable_clair to-sable-fonce via-rouge mt-8 rounded font-semibold text-sm text-gray-800 hover:bg-gradient-to-b from-red_200 to-red-500 via-cyan_400">Enregistrer</button>
             </div>
         </form>
     </div>

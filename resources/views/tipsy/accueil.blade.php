@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    <div class="" style="background-image: url('assets/bgsable2.jpg')">
+    <div style="background-image: url('assets/bgsable2.jpg')">
 
         <div class="px-10">
             <div class="relative py-12 px-24">
@@ -19,9 +19,10 @@
             </div>
 
             {{-- cards --}}
-            <div class="py-12 flex justify-around">
+            <div class="my-12 justify-around flex ">
+
                 <div
-                    class="fixed group transition cursor-pointer duration-300 ease-in-out flex flex-col items-stretch w-64  rotate-6 bg-sable_fonce rounded hover:shadow hover:-rotate-6 hover:drop-shadow-xl relative max-w-xs overflow-hidden hover:bg-gradient-to-thover: from-rose-500 hover: via-red-500 hover: to-red-100">
+                    class="group transition cursor-pointer duration-300 ease-in-out flex flex-col items-stretch w-64  rotate-6 bg-sable_fonce rounded hover:shadow hover:-rotate-6 hover:drop-shadow-xl relative max-w-xs overflow-hidden">
                     <div>
                         <h3 class="text-center font-pacifico m-3">Cocktail Champagne</h3>
                     </div>
@@ -38,30 +39,43 @@
                             <img src="img/lemon.svg" alt="Lemon" class="lemon opacity-30">
                             <img src="img/lemon.svg" alt="Lemon" class="lemon opacity-30">
                         </div>
-                        <div>
-                            <button
-                                class="h-10 w-14  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-cyan-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none"><span
-                                    class="relative z-20 hover:text-black ">Share</span>
-                            </button>
+                        <button
+                            class="shareButton h-10 w-14  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-cyan-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none"><span
+                                class="relative z-10 hover:text-black ">Share</span>
+                        </button>
 
-                        </div>
                     </div>
+
+                    <button  class="newShareButton hidden absolute w-9/12">
+                        <div class="flex gap-3  left-3  mt-72 z-10 ml-3">
+                            <div
+                                class="h-8 w-8  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-yellow-400 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none">
+                                <span class="relative z-20 hover:text-black "><a href="https://www.tiktok.com">
+                                        <img src="img/Tiktok.svg" alt="Partager sur Tiktok">
+                                    </a></span>
+                            </div>
+                            <div
+                                class="h-8 w-8  bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-orange-500 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none">
+                                <span class="relative z-20 hover:text-black "><a href="https://www.instagram.com">
+                                        <img src="img/Instagram.svg" alt="Partager sur Instagram">
+                                    </a></span>
+                            </div>
+                            <div
+                                class="h-8 w-8   bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-emerald-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none">
+                                <span class="relative z-20 hover:text-black "><a href="https://accounts.snapchat.com">
+                                        <img src="img/snap.svg" alt="Partager sur Snapchat">
+                                    </a></span>
+                            </div>
+                            <div
+                                class="h-8 w-8   bg-white bg-opacity-50 backdrop-blur-lg drop-shadow-lg  overflow-hidden z-0 relative before:[''] before:absolute before:top-16 before:left-0 before:w-full before:h-full shadow-inner before:bg-rose-600 before:opacity-30 rounded-b-lg before:rounded-r before:transition-all before:duration-500 hover:before:top-0 hover:before:rounded-none">
+                                <span class="relative z-20 hover:text-black "><a href="https://twitter.com">
+                                        <img src="img/Twitter.svg" alt="Partager sur Twitter">
+                                    </a></span>
+                            </div>
+                        </div>
+                    </button>
                 </div>
-                <div
-                    class="relative w-24 rounded-full flex items-center justify-center after:absolute after:p-[25px] focus:outline-none group-focus-within:bg-grayishBlue translate-y-44">
-                    <a href="https://www.tiktok.com/com">
-                        <img src="img/Tiktok.svg" alt="Partager sur Tiktok">
-                    </a>
-                    <a href="https://www.instagram.com">
-                        <img src="img/Instagram.svg" alt="Partager sur Instagram">
-                    </a>
-                    <a href="https://accounts.snapchat.com">
-                        <img src="img/snap.svg" alt="Partager sur Snapchat">
-                    </a>
-                    <a href="https://twitter.com">
-                        <img src="img/Twitter.svg" alt="Partager sur Twitter">
-                    </a>
-                </div>
+
 
                 <div
                     class="group transition cursor-pointer duration-300 ease-in-out flex flex-col items-stretch w-64  -rotate-6 bg-sable_fonce rounded hover:shadow hover:rotate-6 hover:drop-shadow-xl relative max-w-xs overflow-hidden hover:bg-gradient-to-thover: from-rose-500 hover: via-red-500 hover: to-red-100">
@@ -157,9 +171,9 @@
                     Ustensiles recommandés</h2>
             </div>
 
-            <div class="flex -mb-36 ">
+            <div class="flex justify-center -mb-36 ">
 
-                <div>
+                <div class="w-2/5">
 
                     <p class="font-poppins m-5">Munissez vous de votre plus beau shaker et c'est parti !</p>
 
@@ -172,86 +186,81 @@
 
                     {{-- carousel debut --}}
 
-                    <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4 rounded-md">
+                    <div
+                        class="flex items-center justify-center w-full h-full sm:py-8 px-4 rounded-md font-pacifico text-center shadow-md">
                         <div class="w-full relative flex items-center justify-center">
-                            <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <button aria-label="slide backward"
+                                class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                                id="prev">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                             <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                                <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                                    <div class="flex flex-shrink-0 relative w-36 h-40 sm:w-auto">
-                                        <img src="https://th.bing.com/th/id/OIP.nDQAFUGCPMTSma7HPyeT1AAAAA?pid=ImgDet&w=199&h=247&c=7" alt="black chair and white table" class="object-contain h-full object-center w-full rounded" />
+                                <div id="slider"
+                                    class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                                    <div class="flex flex-shrink-0 relative w-36 h-96 sm:w-auto bg-transparent">
+                                        <img src="https://cdn.goody.buzz/media/20190625125414/cuill%C3%A8re-cocktail.jpg"
+                                            alt="Cuillère à Cocktail"
+                                            class="object-contain h-full object-center w-full rounded" />
                                         <div class="absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 1</h2>
+                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-gray-900">
+                                                Cuillère à Cocktail</h2>
 
                                         </div>
                                     </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="//th.bing.com/th/id/OIP.hv-opFKpa6YrF-fifXfHwAHaHa?pid=ImgDet&w=178&h=178&c=7" alt="sitting area" class="object-cover object-center w-full rounded" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
+                                    <div class="flex flex-shrink-0 relative w-full  h-96 sm:w-auto">
+                                        <img src="https://i.pinimg.com/736x/fa/24/1f/fa241fa279d1cb35ef16ca76a943f426--vin-cocktails.jpg"
+                                            alt="Outil à étages pour Cocktail"
+                                            class="object-cover object-center w-full rounded top-10" />
+                                        <div class="absolute w-full h-full p-6">
+                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-gray-900">
+                                                Outil à étages pour Cocktail</h2>
 
                                         </div>
                                     </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/tCfVky2/carosel-3.png" alt="sitting area" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto h-96">
+                                        <img src="https://media.madeindesign.com/nuxeo/products/5/0/coffret-cocktail-acier_madeindesign_350443_original.jpg"
+                                            alt="Coffret Cocktail" class="object-cover object-center w-full" />
+                                        <div class="absolute w-full h-full p-6">
+                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-gray-900">
+                                                Coffret Cocktail</h2>
 
                                         </div>
                                     </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/rFsGfr5/carosel-4.png" alt="sitting area" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/DWrGxX6/carosel-2.png" alt="sitting area" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/tCfVky2/carosel-3.png" alt="sitting area" class="object-contain h-full object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/rFsGfr5/carosel-4.png" alt="sitting area" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                        <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                                        <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto h-96">
+                                        <img src="https://ae01.alicdn.com/kf/HTB1W_JTOXXXXXXfXXXXq6xXFXXXI/Stainless-Steel-Measuring-Shot-Cup-Ounce-Jigger-Bar-Cocktail-Drink-Mixer-Liquor-Measuring-Cup-Measurer-Mojito.jpg"
+                                            alt="Verre doseur pour Cocktail"
+                                            class="object-cover object-center w-full rounded" />
+                                        <div class=" absolute w-full h-full p-6">
+                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-gray-900">
+                                                Verre doseur pour Cocktail</h2>
 
                                         </div>
                                     </div>
 
+                                    <div class="flex flex-shrink-0 relative w-full sm:w-auto h-96">
+                                        <img src="https://m.media-amazon.com/images/I/61DhiNjIxwL._AC_SX450_.jpg"
+                                            alt="Pilon pour Cocktail"
+                                            class="object-cover object-center w-full rounded" />
+                                        <div class=" absolute w-full h-full p-6">
+                                            <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-gray-900">
+                                                Verre doseur pour Cocktail</h2>
 
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
-                            <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <button aria-label="slide forward"
+                                class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                                id="next">
+                                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
                         </div>

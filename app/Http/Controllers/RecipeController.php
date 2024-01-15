@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Recipe;
-use App\Models\theme;
+use App\Models\Theme;
 
 class RecipeController extends Controller
 {
@@ -72,8 +72,8 @@ class RecipeController extends Controller
     public function update(Request $request, Recipe $recipe)
     {
         $validated = $request->validate([
-            'name'=>'required',
-            'description'=>'required',
+            'name' => 'required',
+            'description' => 'required',
             'url' => 'required'
         ]);
 

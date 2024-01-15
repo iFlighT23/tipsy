@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ingredient;
-use App\Models\Recipe;
-use App\Models\Step;
+use App\Models\Ingredient;
+// use App\Models\Recipe;
+// use App\Models\Step;
 use Illuminate\Http\Request;
 
 class IngredientController extends Controller
@@ -43,7 +43,7 @@ class IngredientController extends Controller
 
         Ingredient::create($validated);
 
-        return redirect('ingredients')->with('success', 'ingredient Ajouté avec succès');
+        return redirect('ingredients')->with('success', 'ingredient ajouté avec succès');
     }
 
     /**

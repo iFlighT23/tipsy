@@ -60,3 +60,4 @@ Route::get('/mentionsLegales', [FrontController::class, 'mentions'])->name('tips
 Route::get('/cookies', [FrontController::class, 'cookies'])->name('tipsy.cookies');
 Route::get('/CGU', [FrontController::class, 'conditions'])->name('tipsy.conditions');
 
+
